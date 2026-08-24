@@ -5,23 +5,23 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.martinkaistvan.hu/szolgaltatasok.html</loc>
+    <loc>https://www.martinkaistvan.hu/szolgaltatasok</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.martinkaistvan.hu/rolam.html</loc>
+    <loc>https://www.martinkaistvan.hu/rolam</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.martinkaistvan.hu/alvallalkozoknak.html</loc>
+    <loc>https://www.martinkaistvan.hu/alvallalkozoknak</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.martinkaistvan.hu/miert-en.html</loc>
+    <loc>https://www.martinkaistvan.hu/miert-en</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.martinkaistvan.hu/blog.html</loc>
+    <loc>https://www.martinkaistvan.hu/blog</loc>
     <priority>0.7</priority>
   </url>
 </urlset>
