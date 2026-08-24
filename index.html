@@ -306,6 +306,10 @@
   .step-tag{display:block;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
   .step-btns{display:flex;gap:10px}
   .step-btns .btn{flex:1;justify-content:center}
+  .form-status{margin-top:12px;font-weight:600;font-size:.92rem;display:none}
+  .form-status.on{display:block}
+  .form-status.ok{color:#1a7f37}
+  .form-status.err{color:#c0392b}
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .qform label{display:block;font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
   .qform .f{margin-bottom:18px}
@@ -510,6 +514,7 @@
         <div class="hero-card hero-rv h3">
           <div class="steps"><i class="on"></i><i></i></div>
           <form class="qform" id="heroForm">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
             <div class="step-pane on" data-step="1">
               <span class="step-tag">1/2 · Kapcsolat</span>
               <div class="row2">
@@ -541,6 +546,7 @@
                 <button type="button" class="btn btn-line step-back">← Vissza</button>
                 <button type="submit" class="btn btn-accent send">Ajánlatkérés elküldése <span class="a">→</span></button>
               </div>
+              <p class="form-status" role="status" aria-live="polite"></p>
             </div>
           </form>
         </div>
@@ -699,6 +705,7 @@
         <p class="quick-line">Vagy hívj/írj közvetlenül: <a href="tel:+36706339181">06 70 633 9181</a> · <a href="mailto:martinkaistvan178@gmail.com">martinkaistvan178@gmail.com</a></p>
         <div class="steps"><i class="on"></i><i></i></div>
         <form class="qform" id="offerForm">
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
           <div class="step-pane on" data-step="1">
             <span class="step-tag">1/2 · Kapcsolat</span>
             <div class="row2">
@@ -731,6 +738,7 @@
               <button type="button" class="btn btn-line step-back">← Vissza</button>
               <button type="submit" class="btn btn-accent send">Ajánlatkérés elküldése <span class="a">→</span></button>
             </div>
+            <p class="form-status" role="status" aria-live="polite"></p>
           </div>
 
           <p class="legal">Az elküldött adatok kezeléséről bővebben: <a href="/adatkezeles">Adatkezelési tájékoztató</a>.</p>
@@ -911,22 +919,36 @@
     formEl.querySelectorAll('.step-back').forEach(btn=>{
       btn.addEventListener('click',()=>showStep(step-1));
     });
-    formEl.addEventListener('submit',function(e){
+    formEl.addEventListener('submit',async function(e){
       e.preventDefault();
       const f=new FormData(formEl);
       const val=k=>(f.get(k)||'').toString().trim();
-      const subject=`Ajánlatkérés: ${val('service')||'Egyéb'} (${val('name')})`;
-      const body=
-`Név: ${val('name')}
-Telefon: ${val('phone')}
-Email: ${val('email')}
-Szolgáltatás: ${val('service')}
-Kívánt időpont: ${val('date')}
-Helyszín/cím: ${val('address')}
-
-Üzenet:
-${val('message')}`;
-      window.location.href=`mailto:martinkaistvan178@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const btn=formEl.querySelector('.send');
+      const statusEl=formEl.querySelector('.form-status');
+      const originalBtnHtml=btn.innerHTML;
+      btn.disabled=true;
+      btn.textContent='Küldés...';
+      if(statusEl){statusEl.className='form-status';statusEl.textContent='';}
+      try{
+        const res=await fetch('/api/contact',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({
+            name:val('name'),phone:val('phone'),email:val('email'),
+            service:val('service'),date:val('date'),address:val('address'),
+            message:val('message'),website:val('website')
+          })
+        });
+        if(!res.ok) throw new Error('send-failed');
+        if(statusEl){statusEl.textContent='Köszönjük! Az ajánlatkérésed elküldve, hamarosan jelentkezünk.';statusEl.classList.add('on','ok');}
+        formEl.reset();
+        showStep(1);
+      }catch(err){
+        if(statusEl){statusEl.textContent='Hiba történt a küldés közben. Hívj közvetlenül: 06 70 633 9181, vagy írj a martinkaistvan178@gmail.com címre.';statusEl.classList.add('on','err');}
+      }finally{
+        btn.disabled=false;
+        btn.innerHTML=originalBtnHtml;
+      }
     });
   }
   wireStepForm(document.getElementById('offerForm'), '.cbox');
