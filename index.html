@@ -5,6 +5,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Martinka István Arnold E.V. · Villany · Takarítás · Felújítás</title>
 <meta name="description" content="Villanyszerelés, professzionális takarítás és felújítás egy kézben. Számlaképesen, garanciával, pontosan. Nagyigmánd és környéke.">
+<link rel="canonical" href="https://www.martinkaistvan.hu/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="hu_HU">
+<meta property="og:site_name" content="Martinka István Arnold E.V.">
+<meta property="og:title" content="Martinka István Arnold E.V. · Villany · Takarítás · Felújítás">
+<meta property="og:description" content="Villanyszerelés, professzionális takarítás és felújítás egy kézben. Számlaképesen, garanciával, pontosan. Nagyigmánd és környéke.">
+<meta property="og:url" content="https://www.martinkaistvan.hu/">
+<meta property="og:image" content="https://www.martinkaistvan.hu/images/martinka-istvan-arnold-villanyszerelo-nagyigmand.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Martinka István Arnold E.V. · Villany · Takarítás · Felújítás">
+<meta name="twitter:description" content="Villanyszerelés, professzionális takarítás és felújítás egy kézben. Számlaképesen, garanciával, pontosan. Nagyigmánd és környéke.">
+<meta name="twitter:image" content="https://www.martinkaistvan.hu/images/martinka-istvan-arnold-villanyszerelo-nagyigmand.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Martinka István Arnold E.V.",
+  "image": "https://www.martinkaistvan.hu/images/martinka-istvan-arnold-villanyszerelo-nagyigmand.jpg",
+  "url": "https://www.martinkaistvan.hu/",
+  "telephone": "+36706339181",
+  "email": "martinkaistvan178@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Szabadság utca 36.",
+    "addressLocality": "Nagyigmánd",
+    "postalCode": "2942",
+    "addressCountry": "HU"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 47.6975,
+      "longitude": 18.1425
+    },
+    "geoRadius": "100000"
+  },
+  "priceRange": "$$",
+  "vatID": "92198104-1-31",
+  "description": "Villanyszerelés, professzionális takarítás és felújítás egy kézben. Számlaképesen, garanciával, pontosan. Nagyigmánd és környéke.",
+  "sameAs": []
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -94,6 +137,7 @@
   .nav-backdrop.open{opacity:1;pointer-events:auto}
   .nav-r a.l{font-weight:600;font-size:.93rem;color:var(--text);transition:color .2s}
   .nav-r a.l:hover{color:var(--ink)}
+  .nav-r a.l.active{color:var(--ink);font-weight:800}
   .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:38px;height:38px;border:none;background:transparent;cursor:pointer;padding:0;flex-shrink:0}
   .burger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.25s}
   .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -738,7 +782,8 @@
 
 <script>
   const REDUCED_MOTION=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const PRELOAD_MIN_MS=REDUCED_MOTION?0:1500, PRELOAD_START=performance.now();
+  const ALREADY_SEEN=sessionStorage.getItem('mkaPreloadSeen');
+  const PRELOAD_MIN_MS=(REDUCED_MOTION||ALREADY_SEEN)?0:1500, PRELOAD_START=performance.now();
   let revealed=false;
   const revealHero=()=>{
     if(revealed) return; revealed=true;
@@ -746,6 +791,7 @@
     setTimeout(()=>{
       document.body.classList.add('loaded');
       requestAnimationFrame(()=>document.body.classList.add('hero-in'));
+      sessionStorage.setItem('mkaPreloadSeen','1');
     },wait);
   };
   if(document.readyState==='complete') revealHero();
