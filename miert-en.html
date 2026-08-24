@@ -52,6 +52,7 @@
   .brand b{font-weight:800;font-size:1rem;letter-spacing:-.01em;line-height:1.15}
   .nav-r{display:flex;align-items:center;gap:28px}
   .nav-links{display:flex;align-items:center;gap:28px}
+  .nav-close{display:none}
   .nav-links .nav-cta{display:none}
   .nav-backdrop{position:fixed;inset:0;background:rgba(15,17,20,.4);backdrop-filter:blur(2px);opacity:0;pointer-events:none;transition:opacity .25s;z-index:57}
   .nav-backdrop.open{opacity:1;pointer-events:auto}
@@ -133,6 +134,7 @@
     .burger{display:flex}
     .nav-r > a.btn-ink{display:none}
     .nav-links{position:fixed;top:14px;left:14px;right:14px;background:#fff;flex-direction:column;align-items:stretch;gap:3px;padding:18px;box-shadow:0 30px 60px -20px rgba(24,26,29,.45);border-radius:20px;transform:translateY(-14px) scale(.97);opacity:0;pointer-events:none;transition:.28s cubic-bezier(.2,.7,.2,1);z-index:59}
+    .nav-links .nav-close{display:flex;align-items:center;justify-content:center;align-self:flex-end;width:34px;height:34px;border:none;background:var(--bg-2);border-radius:10px;font-size:1rem;line-height:1;color:var(--ink);cursor:pointer;margin-bottom:6px;flex-shrink:0}
     .nav-links.open{transform:none;opacity:1;pointer-events:auto}
     .nav-links a.l{display:flex;align-items:center;justify-content:space-between;width:100%;padding:15px 14px;border-radius:12px;font-size:1.02rem;font-weight:700;color:var(--ink);opacity:0;transform:translateY(-6px);transition:opacity .3s,transform .3s,background .2s}
     .nav-links a.l::after{content:"→";opacity:.3;font-weight:400;transition:transform .2s,opacity .2s}
@@ -157,6 +159,7 @@
       <a href="/" class="brand"><img src="images/martinka-istvan-arnold-logo.png" alt="Martinka István Arnold E.V. logó"><span><b>Martinka István Arnold</b></span></a>
       <div class="nav-r">
         <div class="nav-links" id="navLinks">
+          <button type="button" class="nav-close" id="navClose" aria-label="Menü bezárása">✕</button>
           <a href="/szolgaltatasok" class="l">Szolgáltatások</a>
           <a href="/rolam" class="l">Rólam</a>
           <a href="/alvallalkozoknak" class="l">Alvállalkozóknak</a>
@@ -266,7 +269,7 @@
 
 <script>
   document.getElementById('yr').textContent=new Date().getFullYear();
-  const burgerBtn=document.getElementById('burgerBtn'), navLinks=document.getElementById('navLinks'), navBackdrop=document.getElementById('navBackdrop');
+  const burgerBtn=document.getElementById('burgerBtn'), navLinks=document.getElementById('navLinks'), navBackdrop=document.getElementById('navBackdrop'), navClose=document.getElementById('navClose');
   if(burgerBtn&&navLinks){
     const closeMenu=()=>{
       navLinks.classList.remove('open');burgerBtn.classList.remove('open');burgerBtn.setAttribute('aria-expanded','false');
@@ -282,6 +285,7 @@
     });
     navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
     if(navBackdrop) navBackdrop.addEventListener('click',closeMenu);
+    if(navClose) navClose.addEventListener('click',closeMenu);
     document.addEventListener('keydown',e=>{if(e.key==='Escape') closeMenu()});
     document.addEventListener('click',e=>{
       if(navLinks.classList.contains('open') && !navLinks.contains(e.target) && !burgerBtn.contains(e.target)) closeMenu();
