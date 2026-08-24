@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Villanyszerelés, takarítás, felújítás Nagyigmándon · Martinka István Arnold E.V.</title>
-<meta name="description" content="Villanyszerelés, takarítás és felújítás Nagyigmándon és a környező településeken, kb. 100 kilométeres körzetben: Kisbér, Bábolna, Komárom, Tata, Tatabánya, Győr, Székesfehérvár. Számlaképesen, garanciával.">
+<title>Szolgálati terület, kb. 100 kilométeres körzet · Martinka István Arnold E.V.</title>
+<meta name="description" content="Villanyszerelés, takarítás és felújítás Nagyigmánd székhellyel, kb. 100 kilométeres körzetben: Kisbér, Bábolna, Komárom, Tata, Tatabánya, Győr, Mór, Székesfehérvár, Veszprém, Budapest és a további környező települések.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -21,18 +21,10 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth;overflow-x:hidden}
-  body{font-family:var(--f);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+  body{font-family:var(--f);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6}
   img{display:block;max-width:100%}
   a{text-decoration:none;color:inherit}
   .wrap{max-width:1180px;margin:0 auto;padding:0 26px}
-
-  .ph{position:relative;overflow:hidden;background:
-      repeating-linear-gradient(135deg,#eef0f1 0 2px,transparent 2px 15px),
-      linear-gradient(150deg,#f0f1f2,#e4e7ea);
-      display:grid;place-items:center}
-  .ph .lbl{display:flex;flex-direction:column;align-items:center;gap:8px;color:#a4abb3;text-align:center;padding:16px}
-  .ph .lbl svg{width:34px;height:34px;opacity:.75}
-  .ph .lbl span{font-size:.76rem;font-weight:600;letter-spacing:.03em;max-width:22ch}
 
   /* ---- NAV ---- */
   header{position:fixed;inset:0 0 auto 0;z-index:60;transition:.35s;background:rgba(255,255,255,.6);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(24,26,29,.06)}
@@ -67,27 +59,31 @@
   .intro .back{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:.88rem;color:var(--muted);margin-bottom:22px}
   .intro .back:hover{color:var(--ink);font-style:italic}
   .kick{display:inline-block;font-weight:700;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-style:italic;margin-bottom:12px}
-  h1{font-weight:400;font-size:clamp(2.1rem,4.4vw,3.2rem);line-height:1.06;letter-spacing:-.03em;color:var(--ink);margin-bottom:16px;max-width:18ch}
-  .intro p{color:var(--muted);font-size:1.08rem;max-width:60ch;font-weight:500;margin-bottom:28px}
-  .quicklinks{display:flex;gap:10px;flex-wrap:wrap}
-  .qlink{font-weight:700;font-size:.86rem;color:var(--ink);background:var(--bg-2);border:1px solid var(--line);border-radius:100px;padding:9px 17px;transition:.2s}
-  .qlink:hover{border-color:var(--ink)}
+  h1{font-weight:400;font-size:clamp(2.1rem,4.4vw,3.2rem);line-height:1.06;letter-spacing:-.03em;color:var(--ink);margin-bottom:16px;max-width:22ch}
+  .intro p{color:var(--muted);font-size:1.08rem;max-width:64ch;font-weight:500;margin-bottom:16px}
 
-  /* ---- SERVICE DETAIL BLOCK ---- */
-  .svc-block{padding:80px 0;border-top:1px solid var(--line)}
-  .svc-block.alt{background:var(--bg-2)}
-  .svc-inner{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:start}
-  .svc-block.rev .svc-inner{grid-template-columns:1.15fr 1fr}
-  .svc-block.rev .svc-media{order:2}
-  .svc-media .ph{aspect-ratio:4/5;border-radius:18px}
-  .svc-tl{font-weight:600;font-size:.86rem;color:var(--ink);font-style:italic;margin-bottom:8px}
-  .svc-text h2{font-weight:400;font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:-.02em;color:var(--ink);margin-bottom:14px}
-  .svc-text > p{color:var(--text);font-size:1.02rem;font-weight:500;max-width:56ch;margin-bottom:26px}
-  .svc-list{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
-  .svc-list li{list-style:none;padding:10px 0 10px 22px;border-top:1px solid var(--line-2);position:relative;font-weight:600;font-size:.92rem;color:var(--text)}
-  .svc-list li::before{content:"";position:absolute;left:0;top:18px;width:9px;height:2px;background:var(--accent)}
-  .svc-list li:nth-child(-n+2){border-top:0}
-  .svc-cta{margin-top:28px}
+  /* ---- MAP + INFO ---- */
+  .area-band{padding:20px 0 70px}
+  .area-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .area-map{border-radius:16px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3}
+  .area-map iframe{width:100%;height:100%;border:0;display:block}
+  .area-note{background:var(--bg-2);border-radius:16px;padding:28px 30px}
+  .area-note h3{font-weight:800;font-size:1.1rem;color:var(--ink);margin-bottom:10px;letter-spacing:-.01em}
+  .area-note p{color:var(--text);font-size:.96rem;font-weight:500;margin-bottom:12px}
+  .area-note p:last-child{margin-bottom:0}
+
+  /* ---- CITY LIST ---- */
+  .zone-band{padding:20px 0 70px;border-top:1px solid var(--line)}
+  .zone-band.alt{background:var(--bg-2)}
+  .zone-head{margin-bottom:26px}
+  .zone-head h2{font-weight:800;font-size:1.35rem;color:var(--ink);letter-spacing:-.01em;margin-bottom:6px}
+  .zone-head span{color:var(--muted);font-size:.92rem;font-weight:500}
+  .city-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+  .city{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;transition:.2s}
+  .city:hover{border-color:var(--neon);transform:translateY(-2px)}
+  .city b{font-weight:700;font-size:.96rem;color:var(--ink)}
+  .city small{font-size:.78rem;color:var(--muted);font-weight:600;white-space:nowrap}
+  .zone-band.alt .city{background:var(--bg)}
 
   /* ---- BOTTOM CTA ---- */
   .cta-band{padding:76px 0;background:var(--ink);text-align:center}
@@ -126,14 +122,10 @@
   .fab-btn:hover{background:var(--accent-d)}
   .fab-btn svg{width:24px;height:24px;transition:transform .25s}
   .fab-wrap.open .fab-btn{background:var(--ink);box-shadow:0 16px 30px -12px rgba(24,26,29,.5)}
-    @media(max-width:900px){.fab-wrap{right:16px;bottom:16px}}
+  @media(max-width:900px){.fab-wrap{right:16px;bottom:16px}}
 
   @media(max-width:900px){
-    .svc-inner,.svc-block.rev .svc-inner{grid-template-columns:1fr}
-    .svc-block.rev .svc-media{order:0}
-    .svc-list{grid-template-columns:1fr}
-    .svc-list li:nth-child(-n+2){border-top:1px solid var(--line-2)}
-    .svc-list li:first-child{border-top:0}
+    .area-grid{grid-template-columns:1fr}
     .burger{display:flex}
     .nav-r > a.btn-ink{display:none}
     .nav-links{position:fixed;top:14px;left:14px;right:14px;background:#fff;flex-direction:column;align-items:stretch;gap:3px;padding:18px;box-shadow:0 30px 60px -20px rgba(24,26,29,.45);border-radius:20px;transform:translateY(-14px) scale(.97);opacity:0;pointer-events:none;transition:.28s cubic-bezier(.2,.7,.2,1);z-index:59}
@@ -150,7 +142,6 @@
     .nav-links.open a.l:nth-child(5){transition-delay:.2s}
     .nav-links .nav-cta{display:flex;justify-content:center;margin-top:10px;opacity:0;transform:translateY(-6px);transition:opacity .3s,transform .3s;transition-delay:.24s}
     .nav-links.open .nav-cta{opacity:1;transform:none}
-    .brand small{display:none}
   }
 </style>
 </head>
@@ -162,10 +153,10 @@
       <a href="index.html" class="brand"><img src="images/martinka-istvan-arnold-logo.png" alt="Martinka István Arnold E.V. logó"><span><b>Martinka István Arnold</b></span></a>
       <div class="nav-r">
         <div class="nav-links" id="navLinks">
+          <a href="szolgaltatasok.html" class="l">Szolgáltatások</a>
           <a href="rolam.html" class="l">Rólam</a>
           <a href="alvallalkozoknak.html" class="l">Alvállalkozóknak</a>
           <a href="miert-en.html" class="l">Miért én</a>
-          <a href="blog.html" class="l">Szolgálati terület</a>
           <a href="index.html#kapcsolat" class="btn btn-ink nav-cta">Ajánlatkérés <span class="a">→</span></a>
         </div>
         <a href="index.html#kapcsolat" class="btn btn-ink">Ajánlatkérés <span class="a">→</span></a>
@@ -179,112 +170,90 @@
 <section class="intro">
   <div class="wrap">
     <a href="index.html" class="back">← Vissza a főoldalra</a>
-    <span class="kick">Amit vállalok</span>
-    <h1>Szolgáltatások részletesen</h1>
-    <p>Három szakterület: villanyszerelés, takarítás és felújítás, egy vállalkozótól, egy telefonszámmal. Alább pontosan látod, milyen munkákat végzek mindegyikben.</p>
-    <div class="quicklinks">
-      <a href="#villany" class="qlink">⚡ Villanyszerelés</a>
-      <a href="#takaritas" class="qlink">🧹 Takarítás</a>
-      <a href="#felujitas" class="qlink">🔧 Felújítás</a>
-    </div>
+    <span class="kick">Hol dolgozom</span>
+    <h1>Szolgálati terület, kb. 100 kilométeres körzetben</h1>
+    <p>Székhelyem Nagyigmánd, Komárom Esztergom megye, itt élek és innen indulok minden munkára. Villanyszerelést, takarítást és felújítást vállalok Nagyigmándon és a környező kisebb településeken, nagyobb, egyeztetett megbízásokra pedig szívesen utazom a kb. 100 kilométeres körzeten belül fekvő városokba is.</p>
+    <p>Alább települések szerint csoportosítva látod, honnan számíthatsz rám, a saját településed közelében. Ha nem találod a helységed a listában, írj vagy hívj bátran, egyedi esetben ennél messzebb is vállalok munkát.</p>
   </div>
 </section>
 
-<!-- VILLANY -->
-<section class="svc-block" id="villany">
+<section class="area-band">
   <div class="wrap">
-    <div class="svc-inner">
-      <div class="svc-media rv">
-        <div class="ph"><img src="images/villanyszereles-nagyigmand.jpg" alt="Villanyszerelés Nagyigmándon, szakszerű kivitelezés" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="area-grid">
+      <div class="area-map rv">
+        <iframe src="https://www.google.com/maps?q=Nagyigm%C3%A1nd,Magyarorsz%C3%A1g&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Térkép, Nagyigmánd"></iframe>
       </div>
-      <div class="svc-text rv d1">
-        <div class="svc-tl">Lakossági és ipari</div>
-        <h2>Villanyszerelés</h2>
-        <p>A teljes körű hálózatépítéstől az apró hibaelhárításig: biztonságosan, szabványosan, a szükséges felülvizsgálati jogosultsággal.</p>
-        <ul class="svc-list">
-          <li>Teljes elektromos hálózat kiépítése, felújítása</li>
-          <li>Hibaelhárítás, rövidzárlat és zárlat keresése</li>
-          <li>Konyhai és háztartási gépek bekötése</li>
-          <li>Villanyóra szabványosítása, mérőhelycsere</li>
-          <li>Ampernövelés, teljesítménybővítés</li>
-          <li>Elosztószekrény cseréje, kismegszakítók cseréje</li>
-          <li>Gyengeáramú hálózatépítés (kaputelefon, hálózat)</li>
-          <li>Kültéri és kerti világítás kiépítése</li>
-          <li>Napelemes rendszerek elektromos bekötése</li>
-          <li>VBF: Villamos Berendezések Felülvizsgálata</li>
-        </ul>
-        <p style="margin-top:22px;color:var(--muted);font-size:.94rem;max-width:56ch">Villanyszerelőként Nagyigmándon élek és dolgozom, innen indulva vállalok munkát kb. 100 kilométeres körzetben: Kisbéren, Bábolnán, Ácson, Komáromban, Tatán, Tatabányán, Oroszlányban, Móron, Győrben, Székesfehérváron, Veszprémben és Budapesten is számíthatsz rám villanyszerelési feladatokra.</p>
-        <div class="svc-cta"><a href="index.html#kapcsolat" class="btn btn-accent">Ajánlatot kérek villanyszerelésre <span class="a">→</span></a></div>
+      <div class="area-note rv d1">
+        <h3>Miért éri meg messzebbről is hívni</h3>
+        <p>Egy vállalkozó koordinálja a villanyszerelést, a takarítást és a felújítást is, nem kell külön szakembert keresned mindegyikhez, akkor sem, ha a lakhelyed nem esik pontosan Nagyigmánd tőszomszédságába.</p>
+        <p>Minden munka számlaképesen, garanciával és előre egyeztetett árazással történik, a helyszínre utazás költségét és időpontját mindig előre, közösen beszéljük meg.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TAKARITAS -->
-<section class="svc-block alt rev" id="takaritas">
+<section class="zone-band">
   <div class="wrap">
-    <div class="svc-inner">
-      <div class="svc-media rv">
-        <div class="ph"><img src="images/takaritas-nagyigmand.jpg" alt="Professzionális takarítás Nagyigmándon" style="width:100%;height:100%;object-fit:cover"></div>
-      </div>
-      <div class="svc-text rv d1">
-        <div class="svc-tl">Professzionális</div>
-        <h2>Takarítás</h2>
-        <p>Rendszeres és alkalmi takarítás magánszemélyeknek, társasházaknak és vállalkozásoknak: alapos munka, megbízható időbeosztással.</p>
-        <ul class="svc-list">
-          <li>Lakások és házfelügyelet alatti területek takarítása</li>
-          <li>Airbnb és apartman takarítás, vendégváltáskor</li>
-          <li>Irodák, üzletek, üzlethelyiségek tisztítása</li>
-          <li>Társasházi közös terek, lépcsőházak takarítása</li>
-          <li>Felújítás utáni nagytakarítás, porozás</li>
-          <li>Ablaktisztítás, redőny és reluxa mosása</li>
-          <li>Szőnyeg és kárpit tisztítása</li>
-          <li>Padló ápolása, súrolása, fényesítése</li>
-          <li>Kerti bútorok, teraszok, udvarok tisztítása</li>
-          <li>Rendszeres heti/havi takarítási szerződés</li>
-        </ul>
-        <p style="margin-top:22px;color:var(--muted);font-size:.94rem;max-width:56ch">Takarítást elsősorban Nagyigmándon, Kisbéren, Bábolnán, Komáromban és Tatán vállalok, de nagyobb megbízásokra Tatabánya, Győr, Mór és Székesfehérvár térségébe is kiutazom.</p>
-        <div class="svc-cta"><a href="index.html#kapcsolat" class="btn btn-accent">Ajánlatot kérek takarításra <span class="a">→</span></a></div>
-      </div>
+    <div class="zone-head rv">
+      <h2>Közeli települések</h2>
+      <span>Nagyigmándtól kb. 20 kilométeren belül</span>
+    </div>
+    <div class="city-grid">
+      <a href="index.html#kapcsolat" class="city rv"><b>Nagyigmánd</b><small>székhely</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Kisbér</b><small>kb. 8 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Bábolna</b><small>kb. 7 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Kocs</b><small>kb. 10 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Ács</b><small>kb. 15 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Naszály</b><small>kb. 15 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Kisigmánd</b><small>kb. 5 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Réde</b><small>kb. 18 km</small></a>
     </div>
   </div>
 </section>
 
-<!-- FELUJITAS -->
-<section class="svc-block" id="felujitas">
+<section class="zone-band alt">
   <div class="wrap">
-    <div class="svc-inner">
-      <div class="svc-media rv">
-        <div class="ph"><img src="images/felujitas-nagyigmand.jpg" alt="Lakásfelújítás, kisebb építőipari munkák Nagyigmándon" style="width:100%;height:100%;object-fit:cover"></div>
-      </div>
-      <div class="svc-text rv d1">
-        <div class="svc-tl">Kiegészítő munkák</div>
-        <h2>Felújítás</h2>
-        <p>A villanyszerelés és a takarítás mellett a leggyakoribb kiegészítő munkákat is elvégzem, hogy egy felújítás valóban egy kézben maradjon.</p>
-        <ul class="svc-list">
-          <li>Festés, mázolás, glettelés</li>
-          <li>Gipszkartonozás, álmennyezet kialakítása</li>
-          <li>Kőműves munkák, falazás, vakolás</li>
-          <li>Hidegburkolás (csempe, járólap)</li>
-          <li>Melegburkolás (laminált padló, szőnyegpadló)</li>
-          <li>Asztalos munkák, ajtók, bútorok javítása</li>
-          <li>Térkövezés, kerti utak kialakítása</li>
-          <li>Kisebb bontási és törmelékelszállítási munkák</li>
-          <li>Szigetelési munkák</li>
-          <li>Teljes lakásfelújítás koordinálása</li>
-        </ul>
-        <p style="margin-top:22px;color:var(--muted);font-size:.94rem;max-width:56ch">Felújítási munkákat Nagyigmánd és a Komárom Esztergom megyei települések mellett Győr, Tatabánya, Székesfehérvár és Budapest térségében is elvállalok, egyeztetés után.</p>
-        <div class="svc-cta"><a href="index.html#kapcsolat" class="btn btn-accent">Ajánlatot kérek felújításra <span class="a">→</span></a></div>
-      </div>
+    <div class="zone-head rv">
+      <h2>Környező városok</h2>
+      <span>Nagyigmándtól kb. 20 és 50 kilométer között</span>
+    </div>
+    <div class="city-grid">
+      <a href="index.html#kapcsolat" class="city rv"><b>Komárom</b><small>kb. 22 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Tata</b><small>kb. 22 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Oroszlány</b><small>kb. 28 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Tatabánya</b><small>kb. 32 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Győr</b><small>kb. 35 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Mór</b><small>kb. 33 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Pápa</b><small>kb. 45 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Esztergom</b><small>kb. 46 km</small></a>
+    </div>
+  </div>
+</section>
+
+<section class="zone-band">
+  <div class="wrap">
+    <div class="zone-head rv">
+      <h2>Távolabbi térség</h2>
+      <span>Nagyigmándtól kb. 50 és 100 kilométer között, egyeztetés alapján</span>
+    </div>
+    <div class="city-grid">
+      <a href="index.html#kapcsolat" class="city rv"><b>Székesfehérvár</b><small>kb. 55 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Veszprém</b><small>kb. 58 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Dorog</b><small>kb. 50 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Nyergesújfalu</b><small>kb. 48 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Bicske</b><small>kb. 50 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Zirc</b><small>kb. 60 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Csorna</b><small>kb. 60 km</small></a>
+      <a href="index.html#kapcsolat" class="city rv"><b>Budapest</b><small>kb. 90 km</small></a>
     </div>
   </div>
 </section>
 
 <div class="cta-band">
   <div class="wrap">
-    <span class="kick">Nem találtad, amit kerestél?</span>
-    <h2>Kérdezz bátran, egyedi munkákra is szívesen adok ajánlatot.</h2>
-    <p>Ha a fentiek közül valami hiányzik, vagy egy vegyes, több szakterületet érintő munkát terveznél, írj vagy hívj, pontosan felmérjük, mire van szükség.</p>
+    <span class="kick">A te településed nincs a listában?</span>
+    <h2>Írj vagy hívj bátran, egyedi esetben ennél messzebb is elmegyek.</h2>
+    <p>A távolság nem akadály, csak egyeztetés kérdése: mondd el, hol laksz és milyen munkára van szükséged, és pontos ajánlatot adok.</p>
     <div class="btns">
       <a href="index.html#kapcsolat" class="btn btn-accent">Ajánlatkérés <span class="a">→</span></a>
       <a href="tel:+36706339181" class="btn btn-line" style="border-color:rgba(255,255,255,.3);color:#fff">06 70 633 9181</a>
@@ -298,7 +267,7 @@
     <div class="top">
       <div class="fb"><img src="images/martinka-istvan-arnold-logo.png" alt="Martinka István Arnold E.V. logó"><div><b>Martinka István Arnold E.V.</b><small>Villany · Takarítás · Felújítás · Nagyigmánd és környéke</small></div></div>
       <div class="fcols">
-        <div class="fcol"><b>Menü</b><a href="szolgaltatasok.html">Szolgáltatások</a><a href="rolam.html">Rólam</a><a href="alvallalkozoknak.html">Alvállalkozóknak</a><a href="miert-en.html">Miért én</a><a href="blog.html">Szolgálati terület</a><a href="index.html#kapcsolat">Kapcsolat</a></div>
+        <div class="fcol"><b>Menü</b><a href="szolgaltatasok.html">Szolgáltatások</a><a href="rolam.html">Rólam</a><a href="alvallalkozoknak.html">Alvállalkozóknak</a><a href="miert-en.html">Miért én</a><a href="index.html#kapcsolat">Kapcsolat</a></div>
         <div class="fcol"><b>Elérhetőség</b><a href="tel:+36706339181">06 70 633 9181</a><a href="mailto:martinkaistvan178@gmail.com">martinkaistvan178@gmail.com</a></div>
         <div class="fcol"><b>Jogi</b><a href="adatkezeles.html">Adatkezelési tájékoztató</a><a href="impresszum.html">Impresszum</a></div>
       </div>

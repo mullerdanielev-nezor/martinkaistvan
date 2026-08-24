@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Villanyszerelés, takarítás, felújítás Nagyigmándon · Martinka István Arnold E.V.</title>
-<meta name="description" content="Villanyszerelés, takarítás és felújítás Nagyigmándon és a környező településeken, kb. 100 kilométeres körzetben: Kisbér, Bábolna, Komárom, Tata, Tatabánya, Győr, Székesfehérvár. Számlaképesen, garanciával.">
+<title>Rólam · Martinka István Arnold E.V.</title>
+<meta name="description" content="Ismerd meg Martinka István Arnoldot, Nagyigmándon dolgozó villanyszerelőt, aki takarítást és felújítást is vállal. Számlaképesen, garanciával, egy kézben.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -21,18 +21,14 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth;overflow-x:hidden}
-  body{font-family:var(--f);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+  body{font-family:var(--f);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6}
   img{display:block;max-width:100%}
   a{text-decoration:none;color:inherit}
   .wrap{max-width:1180px;margin:0 auto;padding:0 26px}
-
   .ph{position:relative;overflow:hidden;background:
       repeating-linear-gradient(135deg,#eef0f1 0 2px,transparent 2px 15px),
       linear-gradient(150deg,#f0f1f2,#e4e7ea);
       display:grid;place-items:center}
-  .ph .lbl{display:flex;flex-direction:column;align-items:center;gap:8px;color:#a4abb3;text-align:center;padding:16px}
-  .ph .lbl svg{width:34px;height:34px;opacity:.75}
-  .ph .lbl span{font-size:.76rem;font-weight:600;letter-spacing:.03em;max-width:22ch}
 
   /* ---- NAV ---- */
   header{position:fixed;inset:0 0 auto 0;z-index:60;transition:.35s;background:rgba(255,255,255,.6);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(24,26,29,.06)}
@@ -62,32 +58,43 @@
   .btn-accent{background:var(--accent);color:#fff}
   .btn-accent:hover{background:var(--accent-d);transform:translateY(-1px)}
 
-  /* ---- PAGE INTRO ---- */
+  /* ---- INTRO ---- */
   .intro{padding:150px 0 60px}
   .intro .back{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:.88rem;color:var(--muted);margin-bottom:22px}
   .intro .back:hover{color:var(--ink);font-style:italic}
   .kick{display:inline-block;font-weight:700;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-style:italic;margin-bottom:12px}
   h1{font-weight:400;font-size:clamp(2.1rem,4.4vw,3.2rem);line-height:1.06;letter-spacing:-.03em;color:var(--ink);margin-bottom:16px;max-width:18ch}
-  .intro p{color:var(--muted);font-size:1.08rem;max-width:60ch;font-weight:500;margin-bottom:28px}
-  .quicklinks{display:flex;gap:10px;flex-wrap:wrap}
-  .qlink{font-weight:700;font-size:.86rem;color:var(--ink);background:var(--bg-2);border:1px solid var(--line);border-radius:100px;padding:9px 17px;transition:.2s}
-  .qlink:hover{border-color:var(--ink)}
 
-  /* ---- SERVICE DETAIL BLOCK ---- */
-  .svc-block{padding:80px 0;border-top:1px solid var(--line)}
-  .svc-block.alt{background:var(--bg-2)}
-  .svc-inner{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:start}
-  .svc-block.rev .svc-inner{grid-template-columns:1.15fr 1fr}
-  .svc-block.rev .svc-media{order:2}
-  .svc-media .ph{aspect-ratio:4/5;border-radius:18px}
-  .svc-tl{font-weight:600;font-size:.86rem;color:var(--ink);font-style:italic;margin-bottom:8px}
-  .svc-text h2{font-weight:400;font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:-.02em;color:var(--ink);margin-bottom:14px}
-  .svc-text > p{color:var(--text);font-size:1.02rem;font-weight:500;max-width:56ch;margin-bottom:26px}
-  .svc-list{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
-  .svc-list li{list-style:none;padding:10px 0 10px 22px;border-top:1px solid var(--line-2);position:relative;font-weight:600;font-size:.92rem;color:var(--text)}
-  .svc-list li::before{content:"";position:absolute;left:0;top:18px;width:9px;height:2px;background:var(--accent)}
-  .svc-list li:nth-child(-n+2){border-top:0}
-  .svc-cta{margin-top:28px}
+  /* ---- ROLAM HERO ---- */
+  .rolam-band{padding:20px 0 70px}
+  .rolam-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+  .rolam-photo .ph{aspect-ratio:1/1;border-radius:18px}
+  .rolam-text p{color:var(--text);font-size:1.06rem;font-weight:500;max-width:58ch;margin-bottom:24px}
+  .rolam-stats{display:flex;gap:34px;flex-wrap:wrap;margin-bottom:8px}
+  .rolam-stats div b{display:block;font-weight:800;font-size:1.5rem;color:var(--ink);letter-spacing:-.02em}
+  .rolam-stats div span{font-size:.86rem;color:var(--muted);font-weight:500}
+  .sig-block{margin-top:30px;padding-top:26px;border-top:1px solid var(--line);display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .sig-line{font-size:.94rem;color:var(--muted);font-weight:500;font-style:italic}
+  .sig-mark{position:relative;line-height:1}
+  .signature{font-family:"Alex Brush",cursive;font-size:2.5rem;color:var(--ink);display:inline-block;transform:rotate(-3deg);line-height:1}
+
+  /* ---- VALUE BLOCKS ---- */
+  .val-band{padding:20px 0 70px;border-top:1px solid var(--line);background:var(--bg-2)}
+  .val-head{margin-bottom:36px;max-width:64ch}
+  .val-head h2{font-weight:800;font-size:1.5rem;color:var(--ink);letter-spacing:-.01em;margin-bottom:10px}
+  .val-head p{color:var(--muted);font-size:1rem;font-weight:500}
+  .val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .val{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 24px}
+  .val .ic{width:44px;height:44px;border-radius:12px;background:var(--bg-2);color:var(--accent);display:grid;place-items:center;margin-bottom:16px}
+  .val h3{font-weight:800;font-size:1.08rem;color:var(--ink);margin-bottom:8px;letter-spacing:-.01em}
+  .val p{color:var(--muted);font-size:.92rem;font-weight:500}
+
+  /* ---- VBF ---- */
+  .vbf-band{padding:70px 0}
+  .vbf-inner{display:grid;grid-template-columns:.5fr 1fr;gap:40px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:20px;padding:44px}
+  .vbf-badge{width:84px;height:84px;border-radius:20px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:800;font-size:1.5rem;letter-spacing:-.02em}
+  .vbf-inner h3{font-weight:800;font-size:1.3rem;color:var(--ink);margin-bottom:10px;letter-spacing:-.01em}
+  .vbf-inner p{color:var(--text);font-size:1rem;font-weight:500;max-width:60ch}
 
   /* ---- BOTTOM CTA ---- */
   .cta-band{padding:76px 0;background:var(--ink);text-align:center}
@@ -96,7 +103,7 @@
   .cta-band p{color:rgba(255,255,255,.68);font-size:1.02rem;font-weight:500;max-width:52ch;margin:0 auto 26px}
   .cta-band .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
   .cta-sig{margin-top:26px;display:inline-flex;align-items:center;gap:10px}
-  .cta-sig .signature{font-family:"Alex Brush",cursive;font-size:1.6rem;color:rgba(255,255,255,.85);transform:rotate(-3deg);display:inline-block}
+  .cta-sig .signature{font-size:1.6rem;color:rgba(255,255,255,.85)}
   .cta-sig small{font-size:.76rem;color:rgba(255,255,255,.42);font-weight:500;font-style:italic}
 
   /* ---- FOOTER ---- */
@@ -114,6 +121,7 @@
 
   .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
   .rv.in{opacity:1;transform:none}
+  .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}
 
   /* ---- STICKY FAB ---- */
   .fab-wrap{position:fixed;right:20px;bottom:20px;z-index:70;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
@@ -126,14 +134,14 @@
   .fab-btn:hover{background:var(--accent-d)}
   .fab-btn svg{width:24px;height:24px;transition:transform .25s}
   .fab-wrap.open .fab-btn{background:var(--ink);box-shadow:0 16px 30px -12px rgba(24,26,29,.5)}
-    @media(max-width:900px){.fab-wrap{right:16px;bottom:16px}}
+  @media(max-width:900px){.fab-wrap{right:16px;bottom:16px}}
 
   @media(max-width:900px){
-    .svc-inner,.svc-block.rev .svc-inner{grid-template-columns:1fr}
-    .svc-block.rev .svc-media{order:0}
-    .svc-list{grid-template-columns:1fr}
-    .svc-list li:nth-child(-n+2){border-top:1px solid var(--line-2)}
-    .svc-list li:first-child{border-top:0}
+    .rolam-grid{grid-template-columns:1fr}
+    .rolam-photo{max-width:420px;width:100%;margin:0 auto 24px}
+    .val-grid{grid-template-columns:1fr}
+    .vbf-inner{grid-template-columns:1fr;text-align:center;padding:32px 26px}
+    .vbf-inner .vbf-badge{margin:0 auto}
     .burger{display:flex}
     .nav-r > a.btn-ink{display:none}
     .nav-links{position:fixed;top:14px;left:14px;right:14px;background:#fff;flex-direction:column;align-items:stretch;gap:3px;padding:18px;box-shadow:0 30px 60px -20px rgba(24,26,29,.45);border-radius:20px;transform:translateY(-14px) scale(.97);opacity:0;pointer-events:none;transition:.28s cubic-bezier(.2,.7,.2,1);z-index:59}
@@ -150,7 +158,6 @@
     .nav-links.open a.l:nth-child(5){transition-delay:.2s}
     .nav-links .nav-cta{display:flex;justify-content:center;margin-top:10px;opacity:0;transform:translateY(-6px);transition:opacity .3s,transform .3s;transition-delay:.24s}
     .nav-links.open .nav-cta{opacity:1;transform:none}
-    .brand small{display:none}
   }
 </style>
 </head>
@@ -162,7 +169,7 @@
       <a href="index.html" class="brand"><img src="images/martinka-istvan-arnold-logo.png" alt="Martinka István Arnold E.V. logó"><span><b>Martinka István Arnold</b></span></a>
       <div class="nav-r">
         <div class="nav-links" id="navLinks">
-          <a href="rolam.html" class="l">Rólam</a>
+          <a href="szolgaltatasok.html" class="l">Szolgáltatások</a>
           <a href="alvallalkozoknak.html" class="l">Alvállalkozóknak</a>
           <a href="miert-en.html" class="l">Miért én</a>
           <a href="blog.html" class="l">Szolgálati terület</a>
@@ -179,102 +186,70 @@
 <section class="intro">
   <div class="wrap">
     <a href="index.html" class="back">← Vissza a főoldalra</a>
-    <span class="kick">Amit vállalok</span>
-    <h1>Szolgáltatások részletesen</h1>
-    <p>Három szakterület: villanyszerelés, takarítás és felújítás, egy vállalkozótól, egy telefonszámmal. Alább pontosan látod, milyen munkákat végzek mindegyikben.</p>
-    <div class="quicklinks">
-      <a href="#villany" class="qlink">⚡ Villanyszerelés</a>
-      <a href="#takaritas" class="qlink">🧹 Takarítás</a>
-      <a href="#felujitas" class="qlink">🔧 Felújítás</a>
-    </div>
+    <span class="kick">Bemutatkozás</span>
+    <h1>Rólam</h1>
   </div>
 </section>
 
-<!-- VILLANY -->
-<section class="svc-block" id="villany">
+<section class="rolam-band">
   <div class="wrap">
-    <div class="svc-inner">
-      <div class="svc-media rv">
-        <div class="ph"><img src="images/villanyszereles-nagyigmand.jpg" alt="Villanyszerelés Nagyigmándon, szakszerű kivitelezés" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="rolam-grid">
+      <div class="rolam-photo rv">
+        <div class="ph"><img src="images/martinka-istvan-arnold-villanyszerelo-nagyigmand.jpg" alt="Martinka István Arnold villanyszerelő Nagyigmándon" style="width:100%;height:100%;object-fit:cover"></div>
       </div>
-      <div class="svc-text rv d1">
-        <div class="svc-tl">Lakossági és ipari</div>
-        <h2>Villanyszerelés</h2>
-        <p>A teljes körű hálózatépítéstől az apró hibaelhárításig: biztonságosan, szabványosan, a szükséges felülvizsgálati jogosultsággal.</p>
-        <ul class="svc-list">
-          <li>Teljes elektromos hálózat kiépítése, felújítása</li>
-          <li>Hibaelhárítás, rövidzárlat és zárlat keresése</li>
-          <li>Konyhai és háztartási gépek bekötése</li>
-          <li>Villanyóra szabványosítása, mérőhelycsere</li>
-          <li>Ampernövelés, teljesítménybővítés</li>
-          <li>Elosztószekrény cseréje, kismegszakítók cseréje</li>
-          <li>Gyengeáramú hálózatépítés (kaputelefon, hálózat)</li>
-          <li>Kültéri és kerti világítás kiépítése</li>
-          <li>Napelemes rendszerek elektromos bekötése</li>
-          <li>VBF: Villamos Berendezések Felülvizsgálata</li>
-        </ul>
-        <p style="margin-top:22px;color:var(--muted);font-size:.94rem;max-width:56ch">Villanyszerelőként Nagyigmándon élek és dolgozom, innen indulva vállalok munkát kb. 100 kilométeres körzetben: Kisbéren, Bábolnán, Ácson, Komáromban, Tatán, Tatabányán, Oroszlányban, Móron, Győrben, Székesfehérváron, Veszprémben és Budapesten is számíthatsz rám villanyszerelési feladatokra.</p>
-        <div class="svc-cta"><a href="index.html#kapcsolat" class="btn btn-accent">Ajánlatot kérek villanyszerelésre <span class="a">→</span></a></div>
+      <div class="rolam-text rv d1">
+        <p>Martinka István Arnold vagyok, Nagyigmándon élő és dolgozó egyéni vállalkozó. Villanyszerelőként indultam, és az évek alatt annyiszor szembesültem azzal, hogy egy felújítás vagy egy egyszerű hibaelhárítás mellett szinte mindig felmerül még egy takarítási vagy kisebb kiegészítő munka is, hogy úgy döntöttem, ezeket is magam vállalom.</p>
+        <p>Így nem kell külön szakembert keresned a villanyszereléshez, mást a takarításhoz és megint mást a felújításhoz: egy telefonszám, egy felelős, végig, az első egyeztetéstől az átadásig.</p>
+        <p>Munkáimat számlaképesen, garanciával és a szükséges felülvizsgálati jogosultsággal (VBF) végzem, Nagyigmándon és a kb. 100 kilométeres körzetben fekvő településeken.</p>
+        <div class="rolam-stats">
+          <div><b>[X]</b><span>év tapasztalat</span></div>
+          <div><b>Nagyigmánd</b><span>és környéke</span></div>
+          <div><b>VBF</b><span>felülvizsgálati jogosultság</span></div>
+        </div>
+        <div class="sig-block rv d2">
+          <p class="sig-line">…és minden munkám mögött ott áll a nevem.</p>
+          <div class="sig-mark">
+            <span class="signature">Martinka I.</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TAKARITAS -->
-<section class="svc-block alt rev" id="takaritas">
+<section class="val-band">
   <div class="wrap">
-    <div class="svc-inner">
-      <div class="svc-media rv">
-        <div class="ph"><img src="images/takaritas-nagyigmand.jpg" alt="Professzionális takarítás Nagyigmándon" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="val-head rv">
+      <h2>Amiben másképp dolgozom</h2>
+      <p>Nem egy nagy céget képviselek, hanem magam végzem el, vagy magam koordinálom a rám bízott munkát, elejétől a végéig.</p>
+    </div>
+    <div class="val-grid">
+      <div class="val rv">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+        <h3>Egy kézben a munka</h3>
+        <p>Villanyszerelés, takarítás és felújítás egy vállalkozótól, egy egyeztetéssel, egy számlázással.</p>
       </div>
-      <div class="svc-text rv d1">
-        <div class="svc-tl">Professzionális</div>
-        <h2>Takarítás</h2>
-        <p>Rendszeres és alkalmi takarítás magánszemélyeknek, társasházaknak és vállalkozásoknak: alapos munka, megbízható időbeosztással.</p>
-        <ul class="svc-list">
-          <li>Lakások és házfelügyelet alatti területek takarítása</li>
-          <li>Airbnb és apartman takarítás, vendégváltáskor</li>
-          <li>Irodák, üzletek, üzlethelyiségek tisztítása</li>
-          <li>Társasházi közös terek, lépcsőházak takarítása</li>
-          <li>Felújítás utáni nagytakarítás, porozás</li>
-          <li>Ablaktisztítás, redőny és reluxa mosása</li>
-          <li>Szőnyeg és kárpit tisztítása</li>
-          <li>Padló ápolása, súrolása, fényesítése</li>
-          <li>Kerti bútorok, teraszok, udvarok tisztítása</li>
-          <li>Rendszeres heti/havi takarítási szerződés</li>
-        </ul>
-        <p style="margin-top:22px;color:var(--muted);font-size:.94rem;max-width:56ch">Takarítást elsősorban Nagyigmándon, Kisbéren, Bábolnán, Komáromban és Tatán vállalok, de nagyobb megbízásokra Tatabánya, Győr, Mór és Székesfehérvár térségébe is kiutazom.</p>
-        <div class="svc-cta"><a href="index.html#kapcsolat" class="btn btn-accent">Ajánlatot kérek takarításra <span class="a">→</span></a></div>
+      <div class="val rv d1">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3>Számla és garancia</h3>
+        <p>Minden elvégzett munka hivatalosan, garanciával és előre egyeztetett, átlátható árazással történik.</p>
+      </div>
+      <div class="val rv d2">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6z"/></svg></div>
+        <h3>Megbízhatóság</h3>
+        <p>A megbeszélt határidőket és a műszaki tartalmat szigorúan betartom, telefonon mindig elérhető vagyok.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FELUJITAS -->
-<section class="svc-block" id="felujitas">
+<section class="vbf-band">
   <div class="wrap">
-    <div class="svc-inner">
-      <div class="svc-media rv">
-        <div class="ph"><img src="images/felujitas-nagyigmand.jpg" alt="Lakásfelújítás, kisebb építőipari munkák Nagyigmándon" style="width:100%;height:100%;object-fit:cover"></div>
-      </div>
-      <div class="svc-text rv d1">
-        <div class="svc-tl">Kiegészítő munkák</div>
-        <h2>Felújítás</h2>
-        <p>A villanyszerelés és a takarítás mellett a leggyakoribb kiegészítő munkákat is elvégzem, hogy egy felújítás valóban egy kézben maradjon.</p>
-        <ul class="svc-list">
-          <li>Festés, mázolás, glettelés</li>
-          <li>Gipszkartonozás, álmennyezet kialakítása</li>
-          <li>Kőműves munkák, falazás, vakolás</li>
-          <li>Hidegburkolás (csempe, járólap)</li>
-          <li>Melegburkolás (laminált padló, szőnyegpadló)</li>
-          <li>Asztalos munkák, ajtók, bútorok javítása</li>
-          <li>Térkövezés, kerti utak kialakítása</li>
-          <li>Kisebb bontási és törmelékelszállítási munkák</li>
-          <li>Szigetelési munkák</li>
-          <li>Teljes lakásfelújítás koordinálása</li>
-        </ul>
-        <p style="margin-top:22px;color:var(--muted);font-size:.94rem;max-width:56ch">Felújítási munkákat Nagyigmánd és a Komárom Esztergom megyei települések mellett Győr, Tatabánya, Székesfehérvár és Budapest térségében is elvállalok, egyeztetés után.</p>
-        <div class="svc-cta"><a href="index.html#kapcsolat" class="btn btn-accent">Ajánlatot kérek felújításra <span class="a">→</span></a></div>
+    <div class="vbf-inner rv">
+      <div class="vbf-badge">VBF</div>
+      <div>
+        <h3>Villamos Berendezések Felülvizsgálata</h3>
+        <p>A villanyszerelési munkák mellett rendelkezem a lakossági és kisebb ipari villamos berendezések biztonsági felülvizsgálatához szükséges jogosultsággal is, így a kiépített vagy javított hálózat szabványosságáról hivatalos dokumentációt is tudok adni.</p>
       </div>
     </div>
   </div>
@@ -282,9 +257,9 @@
 
 <div class="cta-band">
   <div class="wrap">
-    <span class="kick">Nem találtad, amit kerestél?</span>
-    <h2>Kérdezz bátran, egyedi munkákra is szívesen adok ajánlatot.</h2>
-    <p>Ha a fentiek közül valami hiányzik, vagy egy vegyes, több szakterületet érintő munkát terveznél, írj vagy hívj, pontosan felmérjük, mire van szükség.</p>
+    <span class="kick">Beszéljünk a munkádról</span>
+    <h2>Írj vagy hívj, pontos ajánlatot adok.</h2>
+    <p>Mondd el, milyen munkára van szükséged, én pedig gyorsan válaszolok, és megbeszéljük a részleteket.</p>
     <div class="btns">
       <a href="index.html#kapcsolat" class="btn btn-accent">Ajánlatkérés <span class="a">→</span></a>
       <a href="tel:+36706339181" class="btn btn-line" style="border-color:rgba(255,255,255,.3);color:#fff">06 70 633 9181</a>
@@ -307,7 +282,6 @@
   </div>
 </footer>
 
-<!-- STICKY FAB -->
 <div class="fab-wrap" id="fab">
   <div class="fab-menu">
     <a href="index.html#kapcsolat" class="fab-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H7l-3 3V4z"/></svg></span>Ajánlatkérés</a>

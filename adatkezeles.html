@@ -11,19 +11,44 @@
 <style>
   :root{
     --ink:#181A1D;--text:#33373D;--muted:#787E87;--bg:#FFFFFF;--bg-2:#E8F3FC;
-    --line:#E9E7E1;--accent:#123A5C;--accent-d:#0B2740;--f:"Archivo",system-ui,sans-serif;
+    --line:#E9E7E1;--accent:#123A5C;--accent-d:#0B2740;
+    --neon:#1B3FE0;--neon-d:#122A9E;--f:"Archivo",system-ui,sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
+  html{overflow-x:hidden}
   body{font-family:var(--f);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
-  a{color:var(--ink);font-style:italic;text-decoration:none}
-  a:hover{text-decoration:underline}
+  a{color:var(--ink);text-decoration:none}
   .wrap{max-width:800px;margin:0 auto;padding:0 26px}
-  header{border-bottom:1px solid var(--line);padding:22px 0}
-  header .wrap{display:flex;align-items:center;justify-content:space-between}
-  .brand{font-weight:800;color:var(--ink);text-decoration:none;font-size:1rem}
-  .back{font-weight:600;font-size:.9rem;color:var(--ink)}
+  .wrap-w{max-width:1180px;margin:0 auto;padding:0 26px}
+
+  /* ---- NAV ---- */
+  header{position:fixed;inset:0 0 auto 0;z-index:60;transition:.35s;background:rgba(255,255,255,.6);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(24,26,29,.06)}
+  header.stuck{background:rgba(255,255,255,.88);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{width:46px;height:46px;object-fit:contain}
+  .brand b{font-weight:800;font-size:1rem;letter-spacing:-.01em;line-height:1.15;font-style:normal}
+  .nav-r{display:flex;align-items:center;gap:28px}
+  .nav-links{display:flex;align-items:center;gap:28px}
+  .nav-links .nav-cta{display:none}
+  .nav-backdrop{position:fixed;inset:0;background:rgba(15,17,20,.4);backdrop-filter:blur(2px);opacity:0;pointer-events:none;transition:opacity .25s;z-index:57}
+  .nav-backdrop.open{opacity:1;pointer-events:auto}
+  .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:38px;height:38px;border:none;background:transparent;cursor:pointer;padding:0;flex-shrink:0}
+  .burger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.25s}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-r a.l{font-weight:600;font-size:.93rem;color:var(--text);transition:color .2s}
+  .nav-r a.l:hover{color:var(--ink);font-style:italic}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:.92rem;padding:12px 22px;border-radius:8px;transition:.2s}
+  .btn .a{transition:transform .2s}.btn:hover .a{transform:translateX(4px)}
+  .btn-ink{background:var(--neon);color:#fff}
+  .btn-ink:hover{background:var(--neon-d);transform:translateY(-1px)}
+  .back{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:.9rem;color:var(--muted)}
   .back:hover{color:var(--ink);font-style:italic}
-  main{padding:56px 0 80px}
+  main{padding:150px 0 80px}
+  main a{color:var(--ink);font-style:italic}
+  main a:hover{text-decoration:underline}
   h1{font-weight:800;font-size:clamp(1.9rem,4vw,2.6rem);letter-spacing:-.02em;color:var(--ink);margin-bottom:8px}
   .updated{color:var(--muted);font-size:.9rem;margin-bottom:40px}
   h2{font-weight:800;font-size:1.25rem;color:var(--ink);margin:34px 0 10px;letter-spacing:-.01em}
@@ -31,8 +56,20 @@
   ul{padding-left:22px;margin:8px 0}
   li{margin-bottom:6px}
   .box{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:18px 0}
-  footer{background:var(--ink);color:rgba(255,255,255,.6);padding:28px 0;font-size:.85rem}
-  footer a{color:rgba(255,255,255,.75)}
+
+  /* ---- FOOTER ---- */
+  footer{background:var(--ink);color:rgba(255,255,255,.6);padding:52px 0 32px}
+  footer .top{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.09)}
+  footer .fb{display:flex;align-items:center;gap:13px}
+  footer .fb img{width:52px;height:52px;object-fit:contain}
+  footer .fb b{color:#fff;font-weight:800;font-size:1.08rem;display:block;letter-spacing:-.01em;font-style:normal}
+  footer .fb small{font-size:.8rem;color:rgba(255,255,255,.5)}
+  footer .fcols{display:flex;gap:44px;flex-wrap:wrap}
+  footer .fcol b{color:#fff;display:block;margin-bottom:10px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-style:normal}
+  footer .fcol a{display:block;padding:4px 0;font-weight:500;transition:color .2s;color:rgba(255,255,255,.6);font-style:normal}
+  footer .fcol a:hover{color:#fff}
+  footer .copy-row{padding-top:22px;font-size:.8rem;color:rgba(255,255,255,.4)}
+  footer .copy-row a{color:rgba(255,255,255,.75);font-style:italic}
 
   /* ---- STICKY FAB ---- */
   .fab-wrap{position:fixed;right:20px;bottom:20px;z-index:70;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
@@ -45,20 +82,54 @@
   .fab-btn:hover{background:var(--accent-d)}
   .fab-btn svg{width:24px;height:24px;transition:transform .25s}
   .fab-wrap.open .fab-btn{background:var(--ink);box-shadow:0 16px 30px -12px rgba(24,26,29,.5)}
+  @media(max-width:900px){
+    .burger{display:flex}
+    .nav-r > a.btn-ink{display:none}
+    .nav-links{position:fixed;top:14px;left:14px;right:14px;background:#fff;flex-direction:column;align-items:stretch;gap:3px;padding:18px;box-shadow:0 30px 60px -20px rgba(24,26,29,.45);border-radius:20px;transform:translateY(-14px) scale(.97);opacity:0;pointer-events:none;transition:.28s cubic-bezier(.2,.7,.2,1);z-index:59}
+    .nav-links.open{transform:none;opacity:1;pointer-events:auto}
+    .nav-links a.l{display:flex;align-items:center;justify-content:space-between;width:100%;padding:15px 14px;border-radius:12px;font-size:1.02rem;font-weight:700;color:var(--ink);opacity:0;transform:translateY(-6px);transition:opacity .3s,transform .3s,background .2s}
+    .nav-links a.l::after{content:"→";opacity:.3;font-weight:400;transition:transform .2s,opacity .2s}
+    .nav-links a.l:active{background:var(--bg-2)}
+    .nav-links a.l:hover::after{opacity:.7;transform:translateX(3px)}
+    .nav-links.open a.l{opacity:1;transform:none}
+    .nav-links.open a.l:nth-child(1){transition-delay:.04s}
+    .nav-links.open a.l:nth-child(2){transition-delay:.08s}
+    .nav-links.open a.l:nth-child(3){transition-delay:.12s}
+    .nav-links.open a.l:nth-child(4){transition-delay:.16s}
+    .nav-links.open a.l:nth-child(5){transition-delay:.2s}
+    .nav-links .nav-cta{display:flex;justify-content:center;margin-top:10px;opacity:0;transform:translateY(-6px);transition:opacity .3s,transform .3s;transition-delay:.24s}
+    .nav-links.open .nav-cta{opacity:1;transform:none}
+    .fab-wrap{right:16px;bottom:16px}
+  }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <span class="brand">Martinka István Arnold E.V.</span>
-    <a href="index.html" class="back">← Vissza a főoldalra</a>
+<header id="hdr">
+  <div class="wrap-w">
+    <div class="nav">
+      <a href="index.html" class="brand"><img src="images/martinka-istvan-arnold-logo.png" alt="Martinka István Arnold E.V. logó"><span><b>Martinka István Arnold</b></span></a>
+      <div class="nav-r">
+        <div class="nav-links" id="navLinks">
+          <a href="szolgaltatasok.html" class="l">Szolgáltatások</a>
+          <a href="rolam.html" class="l">Rólam</a>
+          <a href="alvallalkozoknak.html" class="l">Alvállalkozóknak</a>
+          <a href="miert-en.html" class="l">Miért én</a>
+          <a href="blog.html" class="l">Szolgálati terület</a>
+          <a href="index.html#kapcsolat" class="btn btn-ink nav-cta">Ajánlatkérés <span class="a">→</span></a>
+        </div>
+        <a href="index.html#kapcsolat" class="btn btn-ink">Ajánlatkérés <span class="a">→</span></a>
+        <button type="button" class="burger" id="burgerBtn" aria-label="Menü" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
   </div>
+  <div class="nav-backdrop" id="navBackdrop"></div>
 </header>
 
 <main>
   <div class="wrap">
-    <h1>Adatkezelési tájékoztató</h1>
+    <a href="index.html" class="back">← Vissza a főoldalra</a>
+    <h1 style="margin-top:22px">Adatkezelési tájékoztató</h1>
     <p class="updated">Utoljára frissítve: 2026. augusztus 14.</p>
 
     <p>Jelen tájékoztató célja, hogy átlátható tájékoztatást adjon arról, hogyan kezeli Martinka István Arnold E.V. (a továbbiakban: Szolgáltató) a weboldalon található ajánlatkérő űrlapon keresztül megadott személyes adatokat, az EU 2016/679 általános adatvédelmi rendelete (GDPR) és az információs önrendelkezési jogról szóló 2011. évi CXII. törvény alapján.</p>
@@ -66,11 +137,11 @@
     <h2>Az adatkezelő</h2>
     <div class="box">
       <p><b>Martinka István Arnold E.V.</b><br>
-      Székhely: [KITÖLTENDŐ]<br>
+      Székhely: 2942 Nagyigmánd, Szabadság utca 36.<br>
       Nyilvántartási szám: [KITÖLTENDŐ]<br>
-      Adószám: [KITÖLTENDŐ]<br>
+      Adószám: 92198104-1-31<br>
       Email: <a href="mailto:martinkaistvan178@gmail.com">martinkaistvan178@gmail.com</a><br>
-      Telefon: <a href="tel:+36706338181">06 70 633 8181</a></p>
+      Telefon: <a href="tel:+36706339181">06 70 633 9181</a></p>
     </div>
 
     <h2>Kezelt adatok köre</h2>
@@ -110,20 +181,51 @@
 
 <footer>
   <div class="wrap">
-    <div>© <span id="yr"></span> Martinka István Arnold E.V. <a href="index.html">Vissza a főoldalra</a></div>
+    <div class="top">
+      <div class="fb"><img src="images/martinka-istvan-arnold-logo.png" alt="Martinka István Arnold E.V. logó"><div><b>Martinka István Arnold E.V.</b><small>Villany · Takarítás · Felújítás · Nagyigmánd és környéke</small></div></div>
+      <div class="fcols">
+        <div class="fcol"><b>Menü</b><a href="szolgaltatasok.html">Szolgáltatások</a><a href="rolam.html">Rólam</a><a href="alvallalkozoknak.html">Alvállalkozóknak</a><a href="miert-en.html">Miért én</a><a href="blog.html">Szolgálati terület</a><a href="index.html#kapcsolat">Kapcsolat</a></div>
+        <div class="fcol"><b>Elérhetőség</b><a href="tel:+36706339181">06 70 633 9181</a><a href="mailto:martinkaistvan178@gmail.com">martinkaistvan178@gmail.com</a></div>
+        <div class="fcol"><b>Jogi</b><a href="adatkezeles.html">Adatkezelési tájékoztató</a><a href="impresszum.html">Impresszum</a></div>
+      </div>
+    </div>
+    <div class="copy-row">© <span id="yr"></span> Martinka István Arnold E.V. Minden jog fenntartva. <a href="llms.txt" style="color:rgba(255,255,255,.32);font-size:.72rem">AI olvasóknak</a></div>
   </div>
 </footer>
 
 <div class="fab-wrap" id="fab">
   <div class="fab-menu">
     <a href="index.html#kapcsolat" class="fab-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H7l-3 3V4z"/></svg></span>Ajánlatkérés</a>
-    <a href="tel:+36706338181" class="fab-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.43a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg></span>Hívás</a>
+    <a href="tel:+36706339181" class="fab-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.43a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg></span>Hívás</a>
   </div>
   <button type="button" class="fab-btn" id="fabBtn" aria-label="Gyors kapcsolat" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.43a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg></button>
 </div>
 
 <script>
   document.getElementById('yr').textContent=new Date().getFullYear();
+  const burgerBtn=document.getElementById('burgerBtn'), navLinks=document.getElementById('navLinks'), navBackdrop=document.getElementById('navBackdrop');
+  if(burgerBtn&&navLinks){
+    const closeMenu=()=>{
+      navLinks.classList.remove('open');burgerBtn.classList.remove('open');burgerBtn.setAttribute('aria-expanded','false');
+      if(navBackdrop) navBackdrop.classList.remove('open');
+      document.body.style.overflow='';
+    };
+    burgerBtn.addEventListener('click',()=>{
+      const open=navLinks.classList.toggle('open');
+      burgerBtn.classList.toggle('open',open);
+      burgerBtn.setAttribute('aria-expanded',open);
+      if(navBackdrop) navBackdrop.classList.toggle('open',open);
+      document.body.style.overflow=open?'hidden':'';
+    });
+    navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+    if(navBackdrop) navBackdrop.addEventListener('click',closeMenu);
+    document.addEventListener('keydown',e=>{if(e.key==='Escape') closeMenu()});
+    document.addEventListener('click',e=>{
+      if(navLinks.classList.contains('open') && !navLinks.contains(e.target) && !burgerBtn.contains(e.target)) closeMenu();
+    });
+  }
+  const hdr=document.getElementById('hdr');
+  const s=()=>hdr.classList.toggle('stuck',scrollY>20);s();addEventListener('scroll',s,{passive:true});
   const fab=document.getElementById('fab'),fabBtn=document.getElementById('fabBtn');
   fabBtn.addEventListener('click',()=>{const open=fab.classList.toggle('open');fabBtn.setAttribute('aria-expanded',open)});
   document.addEventListener('click',e=>{if(fab.classList.contains('open') && !fab.contains(e.target)) fab.classList.remove('open')});

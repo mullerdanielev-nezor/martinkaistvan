@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Martinka István Arnold E.V. · Villany · Takarítás · Felújítás</title>
-<meta name="description" content="Villanyszerelés, professzionális takarítás és felújítás egy kézben. Számlaképesen, garanciával, pontosan. Baja és környéke.">
+<meta name="description" content="Villanyszerelés, professzionális takarítás és felújítás egy kézben. Számlaképesen, garanciával, pontosan. Nagyigmánd és környéke.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -88,8 +88,17 @@
   .brand b{font-weight:800;font-size:1rem;letter-spacing:-.01em;line-height:1.15}
   .brand small{display:block;font-weight:600;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .nav-r{display:flex;align-items:center;gap:28px}
+  .nav-links{display:flex;align-items:center;gap:28px}
+  .nav-links .nav-cta{display:none}
+  .nav-backdrop{position:fixed;inset:0;background:rgba(15,17,20,.4);backdrop-filter:blur(2px);opacity:0;pointer-events:none;transition:opacity .25s;z-index:57}
+  .nav-backdrop.open{opacity:1;pointer-events:auto}
   .nav-r a.l{font-weight:600;font-size:.93rem;color:var(--text);transition:color .2s}
   .nav-r a.l:hover{color:var(--ink);font-style:italic}
+  .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:38px;height:38px;border:none;background:transparent;cursor:pointer;padding:0;flex-shrink:0}
+  .burger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.25s}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:.92rem;padding:12px 22px;border-radius:8px;transition:.2s}
   .btn .a{transition:transform .2s}.btn:hover .a{transform:translateX(4px)}
   .btn-ink{background:var(--neon);color:#fff}
@@ -321,7 +330,22 @@
     .photo-inner::before{border-radius:24px}
     .hero-photo .float,.hero-photo .badge2{display:none}
     h1{font-size:clamp(2rem,10vw,3rem)}
-    .nav-r a.l{display:none}
+    .burger{display:flex}
+    .nav-r > a.btn-ink{display:none}
+    .nav-links{position:fixed;top:14px;left:14px;right:14px;background:#fff;flex-direction:column;align-items:stretch;gap:3px;padding:18px;box-shadow:0 30px 60px -20px rgba(24,26,29,.45);border-radius:20px;transform:translateY(-14px) scale(.97);opacity:0;pointer-events:none;transition:.28s cubic-bezier(.2,.7,.2,1);z-index:59}
+    .nav-links.open{transform:none;opacity:1;pointer-events:auto}
+    .nav-links a.l{display:flex;align-items:center;justify-content:space-between;width:100%;padding:15px 14px;border-radius:12px;font-size:1.02rem;font-weight:700;color:var(--ink);opacity:0;transform:translateY(-6px);transition:opacity .3s,transform .3s,background .2s}
+    .nav-links a.l::after{content:"→";opacity:.3;font-weight:400;transition:transform .2s,opacity .2s}
+    .nav-links a.l:active{background:var(--bg-2)}
+    .nav-links a.l:hover::after{opacity:.7;transform:translateX(3px)}
+    .nav-links.open a.l{opacity:1;transform:none}
+    .nav-links.open a.l:nth-child(1){transition-delay:.04s}
+    .nav-links.open a.l:nth-child(2){transition-delay:.08s}
+    .nav-links.open a.l:nth-child(3){transition-delay:.12s}
+    .nav-links.open a.l:nth-child(4){transition-delay:.16s}
+    .nav-links.open a.l:nth-child(5){transition-delay:.2s}
+    .nav-links .nav-cta{display:flex;justify-content:center;margin-top:10px;opacity:0;transform:translateY(-6px);transition:opacity .3s,transform .3s;transition-delay:.24s}
+    .nav-links.open .nav-cta{opacity:1;transform:none}
     .brand small{display:none}
     .rolam-photo{max-width:420px;width:100%;margin:24px auto 0;order:2}
     .rolam-text{order:1;padding:28px 24px}
@@ -358,24 +382,30 @@
     </svg>
   </div>
   <div class="preloader-logo">
-    <img class="half-l" src="images/logo.png" alt="">
-    <img class="half-r" src="images/logo.png" alt="">
+    <img class="half-l" src="images/martinka-istvan-arnold-logo.png" alt="">
+    <img class="half-r" src="images/martinka-istvan-arnold-logo.png" alt="">
   </div>
 </div>
 
 <header id="hdr">
   <div class="wrap">
     <div class="nav">
-      <a href="#top" class="brand"><img src="images/logo.png" alt="logó"><span><b>Martinka István Arnold</b></span></a>
+      <a href="#top" class="brand"><img src="images/martinka-istvan-arnold-logo.png" alt="Martinka István Arnold E.V. logó"><span><b>Martinka István Arnold</b></span></a>
       <div class="nav-r">
-        <a href="#szolgaltatasok" class="l">Szolgáltatások</a>
-        <a href="#rolam" class="l">Rólam</a>
-        <a href="#munkak" class="l">Alvállalkozóknak</a>
-        <a href="#miert" class="l">Miért én</a>
+        <div class="nav-links" id="navLinks">
+          <a href="szolgaltatasok.html" class="l">Szolgáltatások</a>
+          <a href="rolam.html" class="l">Rólam</a>
+          <a href="alvallalkozoknak.html" class="l">Alvállalkozóknak</a>
+          <a href="miert-en.html" class="l">Miért én</a>
+          <a href="blog.html" class="l">Szolgálati terület</a>
+          <a href="#kapcsolat" class="btn btn-ink nav-cta">Ajánlatkérés <span class="a">→</span></a>
+        </div>
         <a href="#kapcsolat" class="btn btn-ink">Ajánlatkérés <span class="a">→</span></a>
+        <button type="button" class="burger" id="burgerBtn" aria-label="Menü" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
   </div>
+  <div class="nav-backdrop" id="navBackdrop"></div>
 </header>
 
 <!-- HERO -->
@@ -402,7 +432,7 @@
     <div class="wrap">
       <div class="hero-photo hero-rv h6">
         <div class="photo-inner">
-          <div class="ph"><img src="images/hero-placeholder.png" alt="Martinka István Arnold" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="ph"><img src="images/martinka-istvan-arnold-villanyszerelo-nagyigmand.jpg" alt="Martinka István Arnold villanyszerelő Nagyigmándon" style="width:100%;height:100%;object-fit:cover"></div>
           <div class="float">
             <div class="dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div>
             <div><b>Számlaképes</b><small>garanciával</small></div>
@@ -414,10 +444,10 @@
       <div class="hero-text">
         <span class="tagline hero-rv h1">Villany · Takarítás · Felújítás</span>
         <h1 class="hero-rv h2">3 szakma - <span class="hl">1 szakember</span></h1>
-        <p class="hero-sub hero-rv h2">Villanyszerelés, takarítás és felújítás egy megbízható szakembertől, Baján és környékén.</p>
+        <p class="hero-sub hero-rv h2">Villanyszerelés, takarítás és felújítás egy megbízható szakembertől, Nagyigmándon és környékén.</p>
         <div class="hero-cta hero-rv h2">
           <a href="#kapcsolat" class="btn btn-accent">Ajánlatkérés <span class="a">→</span></a>
-          <a href="tel:+36706338181" class="btn btn-line">Hívás most</a>
+          <a href="tel:+36706339181" class="btn btn-line">Hívás most</a>
         </div>
         <div class="hero-badges hero-rv h2">
           <span class="hb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H7l-3 3V4z"/></svg>Számlaképes</span>
@@ -452,7 +482,7 @@
               <span class="step-tag">2/2 · Részletek</span>
               <div class="row2">
                 <div class="f"><label for="hf-date">Kívánt időpont</label><input id="hf-date" name="date" type="text" placeholder="pl. augusztus vége"></div>
-                <div class="f"><label for="hf-address">Helyszín / cím</label><input id="hf-address" name="address" type="text" placeholder="Baja, ..."></div>
+                <div class="f"><label for="hf-address">Helyszín / cím</label><input id="hf-address" name="address" type="text" placeholder="Nagyigmánd, ..."></div>
               </div>
               <div class="f"><label for="hf-msg">Üzenet</label><textarea id="hf-msg" name="message" placeholder="Röviden írd le, miben segíthetek..."></textarea></div>
               <div class="step-btns">
@@ -479,7 +509,7 @@
     <div class="svc-bricks">
 
       <div class="svc-brick rv">
-        <div class="ph"><img src="images/svc-villany.jpg" alt="Villanyszerelés" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="ph"><img src="images/villanyszereles-nagyigmand.jpg" alt="Villanyszerelés Nagyigmándon, szakszerű kivitelezés" style="width:100%;height:100%;object-fit:cover"></div>
         <div class="in">
           <div class="svc-badge">1</div>
           <h3>Villanyszerelés</h3>
@@ -498,7 +528,7 @@
       </div>
 
       <div class="svc-brick rv d1">
-        <div class="ph"><img src="images/svc-takaritas.jpg" alt="Takarítás" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="ph"><img src="images/takaritas-nagyigmand.jpg" alt="Professzionális takarítás Nagyigmándon" style="width:100%;height:100%;object-fit:cover"></div>
         <div class="in">
           <div class="svc-badge">2</div>
           <h3>Takarítás</h3>
@@ -516,7 +546,7 @@
       </div>
 
       <div class="svc-brick rv d2">
-        <div class="ph"><img src="images/svc-felujitas.jpg" alt="Felújítás" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="ph"><img src="images/felujitas-nagyigmand.jpg" alt="Lakásfelújítás, kisebb építőipari munkák Nagyigmándon" style="width:100%;height:100%;object-fit:cover"></div>
         <div class="in">
           <div class="svc-badge">3</div>
           <h3>Felújítás</h3>
@@ -545,15 +575,15 @@
   <div class="wrap">
     <div class="rolam-grid">
       <div class="rolam-photo rv">
-        <div class="ph"><img src="images/hero-placeholder.png" alt="Martinka István Arnold" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="ph"><img src="images/martinka-istvan-arnold-villanyszerelo-nagyigmand.jpg" alt="Martinka István Arnold villanyszerelő Nagyigmándon" style="width:100%;height:100%;object-fit:cover"></div>
       </div>
       <div class="rolam-text rv d1">
         <span class="kick">Bemutatkozás</span>
         <h2 class="sec-title">Rólam</h2>
-        <p>Martinka István Arnold vagyok, Baján és környékén dolgozó egyéni vállalkozó. Villanyszerelőként indultam, mára a takarítási és felújítási munkákat is magabiztosan vállalom, mert tudom, mennyi bosszúságot okoz, ha egy munkához három vagy négy különböző szakembert kell megtalálni, egyeztetni és összehangolni. Célom, hogy nálam ez ne legyen probléma: egy telefonszám, egy felelős, végig.</p>
+        <p>Martinka István Arnold vagyok, Nagyigmándon és környékén dolgozó egyéni vállalkozó. Villanyszerelőként indultam, mára a takarítási és felújítási munkákat is magabiztosan vállalom, mert tudom, mennyi bosszúságot okoz, ha egy munkához három vagy négy különböző szakembert kell megtalálni, egyeztetni és összehangolni. Célom, hogy nálam ez ne legyen probléma: egy telefonszám, egy felelős, végig.</p>
         <div class="rolam-stats">
           <div><b>[X]</b><span>év tapasztalat</span></div>
-          <div><b>Baja</b><span>és környéke</span></div>
+          <div><b>Nagyigmánd</b><span>és környéke</span></div>
           <div><b>VBF</b><span>felülvizsgálati jogosultság</span></div>
         </div>
         <div class="sig-block rv d2">
@@ -563,6 +593,7 @@
             <svg class="sig-underline" viewBox="0 0 200 16" preserveAspectRatio="none"><path d="M2 8c30 10 50-12 80-4s60 14 90 2" /></svg>
           </div>
         </div>
+        <div style="margin-top:26px"><a href="rolam.html" class="svc-link">Teljes bemutatkozás <span class="a">→</span></a></div>
       </div>
     </div>
   </div>
@@ -578,7 +609,10 @@
         <h4>Alvállalkozóként is szívesen dolgozom</h4>
         <p>Amennyiben cégként vagy fővállalkozóként alvállalkozót keresel villanyszerelési, takarítási vagy felújítási feladatokra, szívesen jelentkezem, számlaképesen, pontos határidőkkel.</p>
       </div>
-      <a href="#kapcsolat" class="btn btn-line">Kapcsolatfelvétel <span class="a">→</span></a>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a href="alvallalkozoknak.html" class="btn btn-accent">Részletek <span class="a">→</span></a>
+        <a href="#kapcsolat" class="btn btn-line">Kapcsolatfelvétel <span class="a">→</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -597,6 +631,7 @@
       <div class="tl-col rv d1"><div class="tl-num">2</div><div class="tl-body"><h4>Számla és garancia</h4><p>Minden elvégzett munka hivatalosan, garanciával és átlátható árazással történik.</p></div></div>
       <div class="tl-col rv d2"><div class="tl-num">3</div><div class="tl-body"><h4>Rugalmasság és pontosság</h4><p>A megbeszélt határidők és a műszaki tartalom szigorú betartása.</p></div></div>
     </div>
+    <div style="margin-top:36px"><a href="miert-en.html" class="svc-link">Minden ok, amiért engem válassz <span class="a">→</span></a></div>
   </div>
 </section>
 
@@ -610,7 +645,7 @@
     <div class="contact-grid">
       <div class="cbox rv">
         <h3>Ajánlatot kérek</h3>
-        <p class="quick-line">Vagy hívj/írj közvetlenül: <a href="tel:+36706338181">06 70 633 8181</a> · <a href="mailto:martinkaistvan178@gmail.com">martinkaistvan178@gmail.com</a></p>
+        <p class="quick-line">Vagy hívj/írj közvetlenül: <a href="tel:+36706339181">06 70 633 9181</a> · <a href="mailto:martinkaistvan178@gmail.com">martinkaistvan178@gmail.com</a></p>
         <div class="steps"><i class="on"></i><i></i></div>
         <form class="qform" id="offerForm">
           <div class="step-pane on" data-step="1">
@@ -637,7 +672,7 @@
             <span class="step-tag">2/2 · Részletek</span>
             <div class="row2">
               <div class="f"><label for="of-date">Kívánt időpont</label><input id="of-date" name="date" type="text" placeholder="pl. augusztus vége"></div>
-              <div class="f"><label for="of-address">Helyszín / cím</label><input id="of-address" name="address" type="text" placeholder="Baja, ..."></div>
+              <div class="f"><label for="of-address">Helyszín / cím</label><input id="of-address" name="address" type="text" placeholder="Nagyigmánd, ..."></div>
             </div>
             <div class="f"><label for="of-msg">Üzenet</label><textarea id="of-msg" name="message" placeholder="Röviden írd le, miben segíthetek..."></textarea></div>
             <p class="hint">Fotót a hibáról/munkáról a válasz emailben tudsz csatolni.</p>
@@ -660,7 +695,7 @@
           </div>
           <div class="cinfo-row">
             <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.43a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg></div>
-            <div class="tx"><b>Telefon</b><a href="tel:+36706338181">06 70 633 8181</a></div>
+            <div class="tx"><b>Telefon</b><a href="tel:+36706339181">06 70 633 9181</a></div>
           </div>
           <div class="cinfo-row">
             <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></div>
@@ -668,7 +703,7 @@
           </div>
         </div>
         <div class="cmap">
-          <iframe src="https://www.google.com/maps?q=Baja,Magyarorsz%C3%A1g&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Térkép, Baja"></iframe>
+          <iframe src="https://www.google.com/maps?q=Nagyigm%C3%A1nd,Magyarorsz%C3%A1g&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Térkép, Nagyigmánd"></iframe>
         </div>
       </div>
     </div>
@@ -679,15 +714,15 @@
 <footer>
   <div class="wrap">
     <div class="top">
-      <div class="fb"><img src="images/logo.png" alt="logó"><div><b>Martinka István Arnold E.V.</b><small>Villany · Takarítás · Felújítás · Baja és környéke</small></div></div>
+      <div class="fb"><img src="images/martinka-istvan-arnold-logo.png" alt="Martinka István Arnold E.V. logó"><div><b>Martinka István Arnold E.V.</b><small>Villany · Takarítás · Felújítás · Nagyigmánd és környéke</small></div></div>
       <div class="fcols">
-        <div class="fcol"><b>Menü</b><a href="#szolgaltatasok">Szolgáltatások</a><a href="#rolam">Rólam</a><a href="#munkak">Alvállalkozóknak</a><a href="#miert">Miért én</a><a href="#kapcsolat">Kapcsolat</a></div>
-        <div class="fcol"><b>Elérhetőség</b><a href="tel:+36706338181">06 70 633 8181</a><a href="mailto:martinkaistvan178@gmail.com">martinkaistvan178@gmail.com</a></div>
+        <div class="fcol"><b>Menü</b><a href="szolgaltatasok.html">Szolgáltatások</a><a href="rolam.html">Rólam</a><a href="alvallalkozoknak.html">Alvállalkozóknak</a><a href="miert-en.html">Miért én</a><a href="blog.html">Szolgálati terület</a><a href="#kapcsolat">Kapcsolat</a></div>
+        <div class="fcol"><b>Elérhetőség</b><a href="tel:+36706339181">06 70 633 9181</a><a href="mailto:martinkaistvan178@gmail.com">martinkaistvan178@gmail.com</a></div>
         <div class="fcol"><b>Jogi</b><a href="adatkezeles.html">Adatkezelési tájékoztató</a><a href="impresszum.html">Impresszum</a></div>
       </div>
     </div>
     <div class="copy-row">
-      <div class="copy">© <span id="yr"></span> Martinka István Arnold E.V. Minden jog fenntartva.</div>
+      <div class="copy">© <span id="yr"></span> Martinka István Arnold E.V. Minden jog fenntartva. <a href="llms.txt" style="color:rgba(255,255,255,.32);font-size:.72rem">AI olvasóknak</a></div>
       <div class="foot-sig"><span class="signature on-dark">Martinka I.</span><small>Minden munkám mögött a nevemmel állok.</small></div>
     </div>
   </div>
@@ -697,7 +732,7 @@
 <div class="fab-wrap" id="fab">
   <div class="fab-menu">
     <a href="#kapcsolat" class="fab-item" id="fabOffer"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H7l-3 3V4z"/></svg></span>Ajánlatkérés</a>
-    <a href="tel:+36706338181" class="fab-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.43a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg></span>Hívás</a>
+    <a href="tel:+36706339181" class="fab-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.43a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg></span>Hívás</a>
   </div>
   <button type="button" class="fab-btn" id="fabBtn" aria-label="Gyors kapcsolat" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.65 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.43a2 2 0 0 1 2.11-.45c.86.31 1.75.53 2.65.65A2 2 0 0 1 22 16.92z"/></svg></button>
 </div>
@@ -736,6 +771,28 @@
   fitHeroHeadline();
   addEventListener('resize',fitHeroHeadline);
   if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitHeroHeadline);
+
+  const burgerBtn=document.getElementById('burgerBtn'), navLinks=document.getElementById('navLinks'), navBackdrop=document.getElementById('navBackdrop');
+  if(burgerBtn&&navLinks){
+    const closeMenu=()=>{
+      navLinks.classList.remove('open');burgerBtn.classList.remove('open');burgerBtn.setAttribute('aria-expanded','false');
+      if(navBackdrop) navBackdrop.classList.remove('open');
+      document.body.style.overflow='';
+    };
+    burgerBtn.addEventListener('click',()=>{
+      const open=navLinks.classList.toggle('open');
+      burgerBtn.classList.toggle('open',open);
+      burgerBtn.setAttribute('aria-expanded',open);
+      if(navBackdrop) navBackdrop.classList.toggle('open',open);
+      document.body.style.overflow=open?'hidden':'';
+    });
+    navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+    if(navBackdrop) navBackdrop.addEventListener('click',closeMenu);
+    document.addEventListener('keydown',e=>{if(e.key==='Escape') closeMenu()});
+    document.addEventListener('click',e=>{
+      if(navLinks.classList.contains('open') && !navLinks.contains(e.target) && !burgerBtn.contains(e.target)) closeMenu();
+    });
+  }
 
   const hdr=document.getElementById('hdr');
   const s=()=>hdr.classList.toggle('stuck',scrollY>20);s();addEventListener('scroll',s,{passive:true});

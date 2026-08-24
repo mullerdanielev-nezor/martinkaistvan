@@ -3,23 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Impresszum · Martinka István Arnold E.V.</title>
-<meta name="robots" content="noindex">
+<title>Miért engem válassz · Martinka István Arnold E.V.</title>
+<meta name="description" content="Egy vállalkozó a villanyszereléshez, a takarításhoz és a felújításhoz is. Számlaképesen, garanciával, pontos határidőkkel, Nagyigmándon és környékén.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#181A1D;--text:#33373D;--muted:#787E87;--bg:#FFFFFF;--bg-2:#E8F3FC;
-    --line:#E9E7E1;--accent:#123A5C;--accent-d:#0B2740;
-    --neon:#1B3FE0;--neon-d:#122A9E;--f:"Archivo",system-ui,sans-serif;
+    --ink:#181A1D; --text:#33373D; --muted:#787E87;
+    --bg:#FFFFFF; --bg-2:#E8F3FC;
+    --line:#E9E7E1; --line-2:#EFEEE9;
+    --accent:#123A5C; --accent-d:#0B2740;
+    --warm:#1D7FD1;
+    --neon:#1B3FE0; --neon-d:#122A9E;
+    --accent-soft:#DCEAF7; --warm-soft:#E8F3FC;
+    --f:"Archivo",system-ui,sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{overflow-x:hidden}
-  body{font-family:var(--f);background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
-  a{color:var(--ink);text-decoration:none}
-  .wrap{max-width:800px;margin:0 auto;padding:0 26px}
-  .wrap-w{max-width:1180px;margin:0 auto;padding:0 26px}
+  html{scroll-behavior:smooth;overflow-x:hidden}
+  body{font-family:var(--f);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6}
+  img{display:block;max-width:100%}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 26px}
 
   /* ---- NAV ---- */
   header{position:fixed;inset:0 0 auto 0;z-index:60;transition:.35s;background:rgba(255,255,255,.6);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(24,26,29,.06)}
@@ -27,62 +32,86 @@
   .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
   .brand{display:flex;align-items:center;gap:12px}
   .brand img{width:46px;height:46px;object-fit:contain}
-  .brand b{font-weight:800;font-size:1rem;letter-spacing:-.01em;line-height:1.15;font-style:normal}
+  .brand b{font-weight:800;font-size:1rem;letter-spacing:-.01em;line-height:1.15}
   .nav-r{display:flex;align-items:center;gap:28px}
   .nav-links{display:flex;align-items:center;gap:28px}
   .nav-links .nav-cta{display:none}
   .nav-backdrop{position:fixed;inset:0;background:rgba(15,17,20,.4);backdrop-filter:blur(2px);opacity:0;pointer-events:none;transition:opacity .25s;z-index:57}
   .nav-backdrop.open{opacity:1;pointer-events:auto}
+  .nav-r a.l{font-weight:600;font-size:.93rem;color:var(--text);transition:color .2s}
+  .nav-r a.l:hover{color:var(--ink);font-style:italic}
   .burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:38px;height:38px;border:none;background:transparent;cursor:pointer;padding:0;flex-shrink:0}
   .burger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.25s}
   .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
   .burger.open span:nth-child(2){opacity:0}
   .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  .nav-r a.l{font-weight:600;font-size:.93rem;color:var(--text);transition:color .2s}
-  .nav-r a.l:hover{color:var(--ink);font-style:italic}
   .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:.92rem;padding:12px 22px;border-radius:8px;transition:.2s}
   .btn .a{transition:transform .2s}.btn:hover .a{transform:translateX(4px)}
   .btn-ink{background:var(--neon);color:#fff}
-  .btn-ink:hover{background:var(--neon-d);transform:translateY(-1px)}
-  .back{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:.9rem;color:var(--muted)}
-  .back:hover{color:var(--ink);font-style:italic}
-  main{padding:150px 0 80px}
-  main a{color:var(--ink);font-style:italic}
-  main a:hover{text-decoration:underline}
-  h1{font-weight:800;font-size:clamp(1.9rem,4vw,2.6rem);letter-spacing:-.02em;color:var(--ink);margin-bottom:8px}
-  .updated{color:var(--muted);font-size:.9rem;margin-bottom:40px}
-  h2{font-weight:800;font-size:1.25rem;color:var(--ink);margin:34px 0 10px;letter-spacing:-.01em}
-  p,li{color:var(--text);font-size:1rem}
-  .box{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:18px 0}
-  .box p{margin-bottom:6px}
-  .fill{background:#FCEFC7;color:#6b5410;font-weight:700;padding:1px 6px;border-radius:5px;font-style:normal}
+  .btn-ink:hover{background:var(--neon-d);transform:translateY(-1px);box-shadow:0 0 0 4px rgba(27,63,224,.18)}
+  .btn-line{border:1.5px solid var(--line);color:var(--ink)}
+  .btn-line:hover{border-color:var(--neon);color:var(--neon)}
+  .btn-accent{background:var(--accent);color:#fff}
+  .btn-accent:hover{background:var(--accent-d);transform:translateY(-1px)}
+
+  /* ---- INTRO ---- */
+  .intro{padding:150px 0 60px}
+  .intro .back{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:.88rem;color:var(--muted);margin-bottom:22px}
+  .intro .back:hover{color:var(--ink);font-style:italic}
+  .kick{display:inline-block;font-weight:700;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);font-style:italic;margin-bottom:12px}
+  h1{font-weight:400;font-size:clamp(2.1rem,4.4vw,3.2rem);line-height:1.06;letter-spacing:-.03em;color:var(--ink);margin-bottom:16px;max-width:20ch}
+  .intro p{color:var(--muted);font-size:1.08rem;max-width:62ch;font-weight:500}
+
+  /* ---- REASON BLOCK (reuses svc-block pattern) ---- */
+  .rs-block{padding:70px 0;border-top:1px solid var(--line)}
+  .rs-block.alt{background:var(--bg-2)}
+  .rs-inner{display:grid;grid-template-columns:.4fr 1fr;gap:56px;align-items:start}
+  .rs-num{font-weight:800;font-size:5rem;color:var(--line);letter-spacing:-.04em;line-height:1}
+  .rs-text h2{font-weight:400;font-size:clamp(1.6rem,3vw,2.1rem);letter-spacing:-.02em;color:var(--ink);margin-bottom:14px}
+  .rs-text p{color:var(--text);font-size:1.02rem;font-weight:500;max-width:60ch}
+
+  /* ---- BOTTOM CTA ---- */
+  .cta-band{padding:76px 0;background:var(--ink);text-align:center}
+  .cta-band .kick{color:rgba(255,255,255,.6)}
+  .cta-band h2{color:#fff;font-weight:400;font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.02em;margin-bottom:14px}
+  .cta-band p{color:rgba(255,255,255,.68);font-size:1.02rem;font-weight:500;max-width:52ch;margin:0 auto 26px}
+  .cta-band .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .cta-sig{margin-top:26px;display:inline-flex;align-items:center;gap:10px}
+  .cta-sig .signature{font-family:"Alex Brush",cursive;font-size:1.6rem;color:rgba(255,255,255,.85);transform:rotate(-3deg);display:inline-block}
+  .cta-sig small{font-size:.76rem;color:rgba(255,255,255,.42);font-weight:500;font-style:italic}
 
   /* ---- FOOTER ---- */
   footer{background:var(--ink);color:rgba(255,255,255,.6);padding:52px 0 32px}
   footer .top{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.09)}
   footer .fb{display:flex;align-items:center;gap:13px}
   footer .fb img{width:52px;height:52px;object-fit:contain}
-  footer .fb b{color:#fff;font-weight:800;font-size:1.08rem;display:block;letter-spacing:-.01em;font-style:normal}
+  footer .fb b{color:#fff;font-weight:800;font-size:1.08rem;display:block;letter-spacing:-.01em}
   footer .fb small{font-size:.8rem;color:rgba(255,255,255,.5)}
   footer .fcols{display:flex;gap:44px;flex-wrap:wrap}
-  footer .fcol b{color:#fff;display:block;margin-bottom:10px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-style:normal}
-  footer .fcol a{display:block;padding:4px 0;font-weight:500;transition:color .2s;color:rgba(255,255,255,.6);font-style:normal}
+  footer .fcol b{color:#fff;display:block;margin-bottom:10px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+  footer .fcol a{display:block;padding:4px 0;font-weight:500;transition:color .2s}
   footer .fcol a:hover{color:#fff}
-  footer .copy-row{padding-top:22px;font-size:.8rem;color:rgba(255,255,255,.4)}
-  footer .copy-row a{color:rgba(255,255,255,.75);font-style:italic}
+  footer .copy{padding-top:22px;font-size:.8rem;color:rgba(255,255,255,.4)}
+
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
 
   /* ---- STICKY FAB ---- */
   .fab-wrap{position:fixed;right:20px;bottom:20px;z-index:70;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
   .fab-menu{display:flex;flex-direction:column;align-items:flex-end;gap:10px;margin-bottom:2px}
-  .fab-item{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:8px 18px 8px 8px;font-weight:700;font-size:.88rem;color:var(--ink);box-shadow:0 16px 30px -16px rgba(24,26,29,.4);white-space:nowrap;opacity:0;transform:translateY(10px) scale(.95);pointer-events:none;transition:opacity .2s,transform .2s;text-decoration:none}
+  .fab-item{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:8px 18px 8px 8px;font-weight:700;font-size:.88rem;color:var(--ink);box-shadow:0 16px 30px -16px rgba(24,26,29,.4);white-space:nowrap;opacity:0;transform:translateY(10px) scale(.95);pointer-events:none;transition:opacity .2s,transform .2s}
   .fab-item .ic{width:32px;height:32px;border-radius:50%;background:var(--bg-2);display:grid;place-items:center;color:var(--ink);font-style:italic;flex-shrink:0}
   .fab-item .ic svg{width:16px;height:16px}
   .fab-wrap.open .fab-item{opacity:1;transform:none;pointer-events:auto}
-  .fab-btn{width:58px;height:58px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;box-shadow:0 16px 30px -12px rgba(29,127,209,.55);cursor:pointer;border:none;transition:background .2s}
+  .fab-btn{width:58px;height:58px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;box-shadow:0 16px 30px -12px rgba(29,127,209,.55);cursor:pointer;border:none;transition:background .2s,transform .2s}
   .fab-btn:hover{background:var(--accent-d)}
   .fab-btn svg{width:24px;height:24px;transition:transform .25s}
   .fab-wrap.open .fab-btn{background:var(--ink);box-shadow:0 16px 30px -12px rgba(24,26,29,.5)}
+  @media(max-width:900px){.fab-wrap{right:16px;bottom:16px}}
+
   @media(max-width:900px){
+    .rs-inner{grid-template-columns:1fr;gap:14px}
+    .rs-num{font-size:3rem}
     .burger{display:flex}
     .nav-r > a.btn-ink{display:none}
     .nav-links{position:fixed;top:14px;left:14px;right:14px;background:#fff;flex-direction:column;align-items:stretch;gap:3px;padding:18px;box-shadow:0 30px 60px -20px rgba(24,26,29,.45);border-radius:20px;transform:translateY(-14px) scale(.97);opacity:0;pointer-events:none;transition:.28s cubic-bezier(.2,.7,.2,1);z-index:59}
@@ -99,14 +128,13 @@
     .nav-links.open a.l:nth-child(5){transition-delay:.2s}
     .nav-links .nav-cta{display:flex;justify-content:center;margin-top:10px;opacity:0;transform:translateY(-6px);transition:opacity .3s,transform .3s;transition-delay:.24s}
     .nav-links.open .nav-cta{opacity:1;transform:none}
-    .fab-wrap{right:16px;bottom:16px}
   }
-  </style>
+</style>
 </head>
 <body>
 
 <header id="hdr">
-  <div class="wrap-w">
+  <div class="wrap">
     <div class="nav">
       <a href="index.html" class="brand"><img src="images/martinka-istvan-arnold-logo.png" alt="Martinka István Arnold E.V. logó"><span><b>Martinka István Arnold</b></span></a>
       <div class="nav-r">
@@ -114,7 +142,6 @@
           <a href="szolgaltatasok.html" class="l">Szolgáltatások</a>
           <a href="rolam.html" class="l">Rólam</a>
           <a href="alvallalkozoknak.html" class="l">Alvállalkozóknak</a>
-          <a href="miert-en.html" class="l">Miért én</a>
           <a href="blog.html" class="l">Szolgálati terület</a>
           <a href="index.html#kapcsolat" class="btn btn-ink nav-cta">Ajánlatkérés <span class="a">→</span></a>
         </div>
@@ -126,36 +153,75 @@
   <div class="nav-backdrop" id="navBackdrop"></div>
 </header>
 
-<main>
+<section class="intro">
   <div class="wrap">
     <a href="index.html" class="back">← Vissza a főoldalra</a>
-    <h1 style="margin-top:22px">Impresszum</h1>
-    <p class="updated">A weboldal üzemeltetőjének adatai az elektronikus kereskedelmi szolgáltatásokról szóló 2001. évi CVIII. törvény alapján.</p>
-
-    <h2>Szolgáltató adatai</h2>
-    <div class="box">
-      <p><b>Név:</b> Martinka István Arnold, egyéni vállalkozó</p>
-      <p><b>Székhely:</b> 2942 Nagyigmánd, Szabadság utca 36.</p>
-      <p><b>Levelezési cím:</b> 2942 Nagyigmánd, Szabadság utca 36.</p>
-      <p><b>Nyilvántartási szám:</b> <span class="fill">[KITÖLTENDŐ]</span> (egyéni vállalkozók nyilvántartása)</p>
-      <p><b>Adószám:</b> 92198104-1-31</p>
-      <p><b>Nyilvántartó hatóság:</b> <span class="fill">[KITÖLTENDŐ]</span> (pl. illetékes okmányiroda / Belügyminisztérium Nyilvántartások Vezetéséért Felelős Helyettes Államtitkárság)</p>
-    </div>
-
-    <h2>Elérhetőségek</h2>
-    <div class="box">
-      <p><b>Telefon:</b> <a href="tel:+36706339181">06 70 633 9181</a></p>
-      <p><b>Email:</b> <a href="mailto:martinkaistvan178@gmail.com">martinkaistvan178@gmail.com</a></p>
-    </div>
-
-    <h2>Tárhelyszolgáltató</h2>
-    <div class="box">
-      <p><span class="fill">[KITÖLTENDŐ]</span>: a weboldal tárhelyét biztosító szolgáltató neve és székhelye.</p>
-    </div>
-
-    <p style="margin-top:34px;color:var(--muted);font-size:.92rem">A sárgával jelölt mezőket kérjük a valós cégadatokkal pótolni, mielőtt az oldal élesbe kerül.</p>
+    <span class="kick">Miért engem válassz</span>
+    <h1>Kevesebb egyeztetés, több nyugalom</h1>
+    <p>Egy villanyszerelési, takarítási vagy felújítási munkánál általában nem egy, hanem több szakembert kellene megtalálnod, egyeztetned és összehangolnod. Íme, miért egyszerűbb, ha helyettük engem hívsz.</p>
   </div>
-</main>
+</section>
+
+<section class="rs-block">
+  <div class="wrap">
+    <div class="rs-inner">
+      <div class="rs-num rv">01</div>
+      <div class="rs-text rv d1">
+        <h2>Egy kézben a munka</h2>
+        <p>A villanyszereléstől a felújításon át a végső átadás utáni takarításig mindent egyetlen vállalkozó koordinál. Nem kell külön időpontot egyeztetned három vagy négy különböző céggel, elég egyszer elmondanod, mire van szükséged.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rs-block alt">
+  <div class="wrap">
+    <div class="rs-inner">
+      <div class="rs-num rv">02</div>
+      <div class="rs-text rv d1">
+        <h2>Számla és garancia</h2>
+        <p>Minden elvégzett munka hivatalosan, számlával és garanciával történik, átlátható árazással. Előre tudod, mennyibe kerül a munka, és utólag is van mire hivatkoznod, ha bármi kérdés merülne fel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rs-block">
+  <div class="wrap">
+    <div class="rs-inner">
+      <div class="rs-num rv">03</div>
+      <div class="rs-text rv d1">
+        <h2>Rugalmasság és pontosság</h2>
+        <p>A megbeszélt határidők és a műszaki tartalom szigorú betartása alapkövetelmény, nem extra szolgáltatás. Ha bármi változik, azonnal szólok, hogy te is időben tudj tervezni.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rs-block alt">
+  <div class="wrap">
+    <div class="rs-inner">
+      <div class="rs-num rv">04</div>
+      <div class="rs-text rv d1">
+        <h2>Jogosultsággal, szabványosan</h2>
+        <p>A villanyszerelési munkákat a szükséges VBF (Villamos Berendezések Felülvizsgálata) jogosultsággal végzem, így a kiépített vagy javított hálózat szabványosságáról hivatalos dokumentációt is tudok adni.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap">
+    <span class="kick">Készen állsz?</span>
+    <h2>Beszéljük meg a munkát, gyorsan válaszolok.</h2>
+    <p>Írj vagy hívj közvetlenül, és pontos ajánlatot adok a szükséges munkára.</p>
+    <div class="btns">
+      <a href="index.html#kapcsolat" class="btn btn-accent">Ajánlatkérés <span class="a">→</span></a>
+      <a href="tel:+36706339181" class="btn btn-line" style="border-color:rgba(255,255,255,.3);color:#fff">06 70 633 9181</a>
+    </div>
+    <div class="cta-sig"><span class="signature">Martinka I.</span><small>Minden munkám mögött a nevemmel állok.</small></div>
+  </div>
+</div>
 
 <footer>
   <div class="wrap">
@@ -167,7 +233,7 @@
         <div class="fcol"><b>Jogi</b><a href="adatkezeles.html">Adatkezelési tájékoztató</a><a href="impresszum.html">Impresszum</a></div>
       </div>
     </div>
-    <div class="copy-row">© <span id="yr"></span> Martinka István Arnold E.V. Minden jog fenntartva. <a href="llms.txt" style="color:rgba(255,255,255,.32);font-size:.72rem">AI olvasóknak</a></div>
+    <div class="copy">© <span id="yr"></span> Martinka István Arnold E.V. Minden jog fenntartva. <a href="llms.txt" style="color:rgba(255,255,255,.32);font-size:.72rem">AI olvasóknak</a></div>
   </div>
 </footer>
 
@@ -204,9 +270,17 @@
   }
   const hdr=document.getElementById('hdr');
   const s=()=>hdr.classList.toggle('stuck',scrollY>20);s();addEventListener('scroll',s,{passive:true});
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
   const fab=document.getElementById('fab'),fabBtn=document.getElementById('fabBtn');
-  fabBtn.addEventListener('click',()=>{const open=fab.classList.toggle('open');fabBtn.setAttribute('aria-expanded',open)});
-  document.addEventListener('click',e=>{if(fab.classList.contains('open') && !fab.contains(e.target)) fab.classList.remove('open')});
+  fabBtn.addEventListener('click',()=>{
+    const open=fab.classList.toggle('open');
+    fabBtn.setAttribute('aria-expanded',open);
+  });
+  document.addEventListener('click',e=>{
+    if(fab.classList.contains('open') && !fab.contains(e.target)) fab.classList.remove('open');
+  });
   document.addEventListener('keydown',e=>{if(e.key==='Escape') fab.classList.remove('open')});
   fab.querySelectorAll('.fab-item').forEach(a=>a.addEventListener('click',()=>fab.classList.remove('open')));
 </script>
