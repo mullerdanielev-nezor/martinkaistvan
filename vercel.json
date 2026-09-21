@@ -1,4 +1,16 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/adatkezeles(.html)?", "destination": "/", "permanent": false },
+    { "source": "/alvallalkozoknak(.html)?", "destination": "/", "permanent": false },
+    { "source": "/blog(.html)?", "destination": "/", "permanent": false },
+    { "source": "/impresszum(.html)?", "destination": "/", "permanent": false },
+    { "source": "/miert-en(.html)?", "destination": "/", "permanent": false },
+    { "source": "/rolam(.html)?", "destination": "/", "permanent": false },
+    { "source": "/szolgaltatasok(.html)?", "destination": "/", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
